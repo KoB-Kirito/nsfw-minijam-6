@@ -1,6 +1,11 @@
 extends CanvasLayer
 
 
+@export_file("*.tscn") var main_menu: String
+@export var options_scene: PackedScene
+var options: Control
+
+
 ## Pause menu can't be opened if disabled
 var enabled: bool = false
 
@@ -19,28 +24,6 @@ var title: String:
 
 func _ready() -> void:
 	hide()
-	
-	music_bus = AudioServer.get_bus_index("Music")
-	sounds_bus = AudioServer.get_bus_index("Sounds")
-	voices_bus = AudioServer.get_bus_index("Voices")
-	
-	#%MusicSlider.value = AudioServer.get_bus_volume_db(music_bus)
-	#%SoundsSlider.value = AudioServer.get_bus_volume_db(sounds_bus)
-	#%VoicesSlider.value = AudioServer.get_bus_volume_db(voices_bus)
-	
-	#%FullscreenCheckBox.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
-
-
-func _on_music_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(music_bus, value)
-
-
-func _on_sounds_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(sounds_bus, value)
-
-
-func _on_voices_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(voices_bus, value)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -55,11 +38,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		toggle()
 		return
 	
+	# controller support
 	if visible and not event is InputEventMouse and event.is_pressed():
-		if not %MusicSlider.has_focus() and \
-				not %SoundsSlider.has_focus() and \
-				not %VoicesSlider.has_focus():
-			%MusicSlider.grab_focus()
+		if not %ResumeButton.has_focus() and \
+				not %RestartButton.has_focus() and \
+				not %OptionsButton.has_focus() and \
+				not %ExitButton.has_focus():
+			%ResumeButton.grab_focus()
 
 
 func toggle() -> void:
@@ -67,14 +52,11 @@ func toggle() -> void:
 	get_tree().paused = visible
 	
 	if visible:
-		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Events.game_paused.emit()
 		
 	else:
-		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		%snd_music.stop()
-		%snd_sounds.stop()
-		%snd_voices.stop()
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		Events.game_unpaused.emit()
 
 
@@ -101,12 +83,26 @@ func _on_fade_gui_input(event: InputEvent) -> void:
 		toggle()
 
 
-func _on_fullscreen_check_box_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-
-
-func _on_button_pressed() -> void:
+func _on_resume_button_pressed() -> void:
 	toggle()
+
+
+func _on_restart_button_pressed() -> void:
+	toggle()
+	get_tree().reload_current_scene()
+
+
+func _on_options_button_pressed() -> void:
+	if not options:
+		options = options_scene.instantiate()
+		add_child(options)
+	
+	options.show()
+
+
+func _on_exit_button_pressed() -> void:
+	#TEST
+	get_tree().quit()
+	
+	#TODO: Quit to main menu?
+	#get_tree().change_scene_to_file(main_menu)

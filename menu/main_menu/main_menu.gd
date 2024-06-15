@@ -25,9 +25,8 @@ func _on_start_button_pressed() -> void:
 	SceneTransition.change_scene(transition_options)
 
 
-
 func _on_options_button_pressed() -> void:
-	pass # Replace with function body.
+	%OptionsMenu.show()
 
 
 func _on_exit_button_pressed() -> void:

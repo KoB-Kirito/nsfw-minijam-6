@@ -18,5 +18,6 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	# Start playing ambience track
-	#TODO: Music
-	#SoundManager.play_music(_ambSound, 1.0, "Music")
+	Bgm.fade_to(_ambSound, 0.0, 0.0)
+	
+	PauseMenu.enabled = true
