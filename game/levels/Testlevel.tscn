@@ -1,13 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1it5tbiaxv8a"]
+[gd_scene load_steps=13 format=3 uid="uid://d1it5tbiaxv8a"]
 
 [ext_resource type="MeshLibrary" uid="uid://dfv7wbqvrkh0g" path="res://assets/libraries/Lib_Terrain.tres" id="1_rwoem"]
 [ext_resource type="Material" uid="uid://8be2olkul00i" path="res://assets/materials/Mat_LevelGrid.tres" id="2_bi5ae"]
+[ext_resource type="PackedScene" uid="uid://duqcippdw1h7s" path="res://game/camera/Camera25D.tscn" id="2_txtxq"]
 [ext_resource type="PackedScene" uid="uid://dcv51hj0eyjv2" path="res://assets/models/dummy/player-model.tscn" id="3_7i0li"]
 [ext_resource type="Script" path="res://game/player/player.gd" id="3_ingl7"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_wtyy0"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_yttal"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ani3p"]
 
@@ -44,19 +41,12 @@ data = {
 "cells": PackedInt32Array(0, 0, 0, 2, 0, 1, 65534, 0, 2)
 }
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58296, 0.954511)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-mesh = SubResource("SphereMesh_wtyy0")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("SphereShape3D_yttal")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02771, 7.63266)
-current = true
+[node name="Camera25D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_txtxq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.18282)
+target = NodePath("../Player")
+offset = Vector3(0, 2.25, 4)
+smoothSpeed = 10.0
+noiseStrength = 0.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.295108, 0.955464, 0, -0.955464, 0.295108, 0, 4.83629, 3.02739)
@@ -82,3 +72,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource("CapsuleShape3D_hjpuu")
+
+[node name="CameraTarget" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

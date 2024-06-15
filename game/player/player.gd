@@ -6,19 +6,20 @@ extends CharacterBody3D
 @export var ROTATION_SPEED: float = 5
 @export var FALL_DECAY: float = 100
 const JUMP_VELOCITY = 4.5
+const CAMERA_FORWARD_DIST = 1.75
 
 @onready var model: Node3D = $Model
+@onready var cameraTaget: Node3D = $CameraTarget
 @onready var animTree: AnimationTree = find_child("AnimationTree")
 @onready var animPlayer: AnimationPlayer = find_child("AnimationPlayer")
 
 var _active: bool = true
 var direction: Vector3 = Vector3.ZERO
 var lastDirection: Vector3 = Vector3.RIGHT
+var cameraTargetOffset: Vector3 = Vector3(0, 2.25, 0)
+var cameraCurrentDist: float = 0
 
 var _footstepSound: AudioStream = preload("res://assets/audio/sounds/steps_floor.ogg")
-
-var rng = RandomNumberGenerator.new()
-
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -26,7 +27,10 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y -= gravity * delta
+		if Input.is_action_pressed("up"):
+			velocity.y -= gravity * delta
+		else:
+			velocity.y -= gravity * delta * 2
 	else:
 		velocity.y = 0
 
@@ -58,6 +62,8 @@ func _physics_process(delta):
 
 	# save last move direction
 	if direction:
+		cameraCurrentDist = lerp(cameraCurrentDist, direction.x * CAMERA_FORWARD_DIST, SMOOTH_SPEED * delta * 0.5)
+		cameraTaget.global_position = global_position + cameraTargetOffset + Vector3.RIGHT * cameraCurrentDist
 		lastDirection = direction
 	
 	# rotate player to face movement direction
@@ -72,9 +78,7 @@ func _on_console_deactivated():
 	_active = true
 
 
-func _on_area_3d_body_entered(_body: Node3D) -> void:
-	var random_pitch = rng.randf_range(0.5, 1.5)
-	
+#func _on_area_3d_body_entered(_body: Node3D) -> void:
 	#TODO: Sound
 	#var asPlayer = SoundManager.play_sound(_footstepSound, "SFX")
 	#asPlayer.pitch_scale = random_pitch
