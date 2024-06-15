@@ -34,9 +34,8 @@ environment = SubResource("Environment_modoh")
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="Level_0" parent="." instance=ExtResource("3_ifcgy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 10)
 
 [node name="Camera25D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_hi7fu")]
-transform = Transform3D(-0.00191365, -0.0377132, 0.999287, 6.77746e-05, 0.999289, 0.0377134, -0.999998, 0.000139897, -0.00190973, 2.08165e-12, 2, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, 2.08165e-12)
 target = NodePath("../Player")
-offset = Vector3(6, 2, 2.08165e-12)
+offset = Vector3(0, 2, 6)

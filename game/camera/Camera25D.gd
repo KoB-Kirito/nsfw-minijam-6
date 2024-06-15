@@ -32,7 +32,7 @@ func _physics_process(delta) -> void:
 	# (and add noise offset)
 	# lerp only in z (use only the z value of the cameraTarget position)
 	self.position = lerp(self.position,
-		Vector3(0, 0, cameraTarget.global_position.z) + offset + noiseOffset,
+		Vector3(cameraTarget.global_position.x, 0, 0) + offset + noiseOffset,
 		smoothSpeed * delta)
 
 # Function to get noise offset from generated noise
@@ -43,6 +43,6 @@ func getNoiseOffset(delta: float) -> Vector3:
 	# so x and y will be reading from unrelated areas of noise
 	# Return vector with y and z offsets since we only move Up/Down/Left/Right
 	return Vector3(
-		0,
+		noise.get_noise_2d(100, noise_i) * noiseStrength,
 		noise.get_noise_2d(1, noise_i) * noiseStrength,
-		noise.get_noise_2d(100, noise_i) * noiseStrength)
+		0)
