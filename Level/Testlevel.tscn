@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1it5tbiaxv8a"]
+[gd_scene load_steps=12 format=3 uid="uid://d1it5tbiaxv8a"]
 
 [ext_resource type="MeshLibrary" uid="uid://dfv7wbqvrkh0g" path="res://Libs/Lib_Terrain.tres" id="1_rwoem"]
 [ext_resource type="Material" uid="uid://8be2olkul00i" path="res://Materials/Mat_LevelGrid.tres" id="2_bi5ae"]
+[ext_resource type="PackedScene" uid="uid://c2723v3g720sw" path="res://Imports/Dummy/Chibi2.gltf" id="3_dv85o"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_wtyy0"]
 
@@ -64,3 +65,6 @@ mesh = SubResource("BoxMesh_ani3p")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_a0wee")
+
+[node name="Chibi" parent="." instance=ExtResource("3_dv85o")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.4156, 1, 1.11583)
