@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdw233li11voo"]
+[gd_scene load_steps=4 format=3 uid="uid://bdw233li11voo"]
 
 [ext_resource type="Script" path="res://autoloads/pause_menu.gd" id="1_ma3iv"]
+[ext_resource type="PackedScene" uid="uid://csligmwblw82j" path="res://menu/options_menu/options_menu.tscn" id="2_5pl4g"]
 [ext_resource type="Theme" uid="uid://c46na1j7c1bq" path="res://menu/theme.tres" id="2_k7txe"]
 
 [node name="PauseMenuLayer" type="CanvasLayer"]
 process_mode = 3
 layer = 128
 script = ExtResource("1_ma3iv")
+main_menu = "res://menu/main_menu/main_menu.tscn"
+options_scene = ExtResource("2_5pl4g")
 
 [node name="Fade" type="ColorRect" parent="."]
 unique_name_in_owner = true
@@ -45,19 +48,27 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ResumeButton" type="Button" parent="Fade/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Resume"
 
 [node name="RestartButton" type="Button" parent="Fade/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Restart Level"
 
 [node name="OptionsButton" type="Button" parent="Fade/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Options"
 
 [node name="ExitButton" type="Button" parent="Fade/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Exit to Main Menu"
 
 [connection signal="gui_input" from="Fade" to="." method="_on_fade_gui_input"]
+[connection signal="pressed" from="Fade/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Fade/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Fade/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Fade/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

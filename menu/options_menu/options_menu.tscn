@@ -17,14 +17,13 @@ theme = ExtResource("1_63gep")
 script = ExtResource("2_rkcsq")
 
 [node name="BackgroundFade" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.501961)
+color = Color(1, 1, 1, 0.752941)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -119,11 +118,12 @@ text = "Resolution"
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 8
-text = "Exit"
+text = "Close"
 
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/TabContainer/Video/MarginContainer/GridContainer/WindowModeOptionButton" to="MarginContainer/VBoxContainer/TabContainer/Video" method="_on_window_mode_option_button_item_selected"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/TabContainer/Video/MarginContainer/GridContainer/ResolutionOptionButton" to="MarginContainer/VBoxContainer/TabContainer/Video" method="_on_resolution_option_button_item_selected"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
