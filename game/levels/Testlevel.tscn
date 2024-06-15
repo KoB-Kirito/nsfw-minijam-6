@@ -43,8 +43,9 @@ data = {
 
 [node name="Camera25D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_txtxq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.18282)
+fov = 45.0
 target = NodePath("../Player")
-offset = Vector3(0, 2.25, 4)
+offset = Vector3(0, 2.25, 6)
 smoothSpeed = 10.0
 noiseStrength = 0.0
 
@@ -65,6 +66,8 @@ environment = SubResource("Environment_a0wee")
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1, 1)
 script = ExtResource("3_ingl7")
+FALL_DECAY = 2.0
+CAMERA_FORWARD_SPEED = 0.3
 
 [node name="Model" parent="Player" instance=ExtResource("3_7i0li")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)

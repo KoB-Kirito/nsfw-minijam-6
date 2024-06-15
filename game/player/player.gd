@@ -5,8 +5,9 @@ extends CharacterBody3D
 @export var SMOOTH_SPEED: float = 10
 @export var ROTATION_SPEED: float = 5
 @export var FALL_DECAY: float = 100
+@export var CAMERA_FORWARD_DIST = 2
+@export var CAMERA_FORWARD_SPEED = 0.5
 const JUMP_VELOCITY = 4.5
-const CAMERA_FORWARD_DIST = 1.75
 
 @onready var model: Node3D = $Model
 @onready var cameraTaget: Node3D = $CameraTarget
@@ -52,8 +53,8 @@ func _physics_process(delta):
 		# set animation blend based on speed
 		animTree.set("parameters/IdleToRun/blend_position", velocity.length() / SPEED)
 	else:
-		velocity.x = lerp(velocity.x, 0.0, SMOOTH_SPEED * delta / FALL_DECAY)
-		velocity.z = lerp(velocity.z, 0.0, SMOOTH_SPEED * delta / FALL_DECAY)
+		velocity.x = lerp(velocity.x, direction.x * SPEED, SMOOTH_SPEED * delta / FALL_DECAY)
+		velocity.z = lerp(velocity.z, direction.z * SPEED, SMOOTH_SPEED * delta / FALL_DECAY)
 		# TODO: falling???
 		animTree.set("parameters/IdleToRun/blend_position", 0)
 
@@ -62,7 +63,7 @@ func _physics_process(delta):
 
 	# save last move direction
 	if direction:
-		cameraCurrentDist = lerp(cameraCurrentDist, direction.x * CAMERA_FORWARD_DIST, SMOOTH_SPEED * delta * 0.5)
+		cameraCurrentDist = lerp(cameraCurrentDist, direction.x * CAMERA_FORWARD_DIST, SMOOTH_SPEED * delta * CAMERA_FORWARD_SPEED)
 		cameraTaget.global_position = global_position + cameraTargetOffset + Vector3.RIGHT * cameraCurrentDist
 		lastDirection = direction
 	
