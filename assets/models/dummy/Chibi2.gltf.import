@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c2723v3g720sw"
-path="res://.godot/imported/Chibi2.gltf-0dafcfc535339cd59d48c14af8414979.scn"
+path="res://.godot/imported/Chibi2.gltf-3ed65a2360666df2b5c96aa98a8dc689.scn"
 
 [deps]
 
-source_file="res://Imports/Dummy/Chibi2.gltf"
-dest_files=["res://.godot/imported/Chibi2.gltf-0dafcfc535339cd59d48c14af8414979.scn"]
+source_file="res://assets/models/dummy/Chibi2.gltf"
+dest_files=["res://.godot/imported/Chibi2.gltf-3ed65a2360666df2b5c96aa98a8dc689.scn"]
 
 [params]
 
