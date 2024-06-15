@@ -1,8 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1it5tbiaxv8a"]
+[gd_scene load_steps=14 format=3 uid="uid://d1it5tbiaxv8a"]
 
 [ext_resource type="MeshLibrary" uid="uid://dfv7wbqvrkh0g" path="res://assets/libraries/Lib_Terrain.tres" id="1_rwoem"]
 [ext_resource type="Material" uid="uid://8be2olkul00i" path="res://assets/materials/Mat_LevelGrid.tres" id="2_bi5ae"]
-[ext_resource type="PackedScene" uid="uid://c2723v3g720sw" path="res://assets/models/dummy/Chibi2.gltf" id="3_dv85o"]
+[ext_resource type="PackedScene" uid="uid://dcv51hj0eyjv2" path="res://assets/models/dummy/player-model.tscn" id="3_7i0li"]
 [ext_resource type="Script" path="res://game/player/player.gd" id="3_ingl7"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_wtyy0"]
@@ -32,9 +32,7 @@ ambient_light_source = 3
 ambient_light_color = Color(0.331538, 0.437518, 0.472877, 1)
 ambient_light_sky_contribution = 0.0
 
-[sub_resource type="AnimationRootNode" id="AnimationRootNode_6eb5i"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nnkva"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjpuu"]
 radius = 0.225
 height = 1.6
 
@@ -58,6 +56,7 @@ shape = SubResource("SphereShape3D_yttal")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02771, 7.63266)
+current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.295108, 0.955464, 0, -0.955464, 0.295108, 0, 4.83629, 3.02739)
@@ -77,15 +76,9 @@ environment = SubResource("Environment_a0wee")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1, 1)
 script = ExtResource("3_ingl7")
 
-[node name="Model" parent="Player" instance=ExtResource("3_dv85o")]
+[node name="Model" parent="Player" instance=ExtResource("3_7i0li")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="AnimationTree" type="AnimationTree" parent="Player/Model"]
-tree_root = SubResource("AnimationRootNode_6eb5i")
-parameters/current_length = 0.0
-parameters/current_position = 0.0
-parameters/current_delta = 0.0
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
-shape = SubResource("CapsuleShape3D_nnkva")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_hjpuu")
