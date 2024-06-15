@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3 uid="uid://d1it5tbiaxv8a"]
+
+[ext_resource type="MeshLibrary" uid="uid://dfv7wbqvrkh0g" path="res://Libs/Lib_Terrain.tres" id="1_rwoem"]
+[ext_resource type="Material" uid="uid://8be2olkul00i" path="res://Materials/Mat_LevelGrid.tres" id="2_bi5ae"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_wtyy0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yttal"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ani3p"]
+
+[sub_resource type="Gradient" id="Gradient_wnbp0"]
+offsets = PackedFloat32Array(0, 0.292994, 0.506821, 0.513116, 1)
+colors = PackedColorArray(0, 0.460471, 0.765065, 1, 0.266894, 0.730792, 1, 1, 0.531977, 0.816427, 1, 1, 3.73013e-07, 0.39247, 0.132134, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tsqxj"]
+gradient = SubResource("Gradient_wnbp0")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vedx8"]
+panorama = SubResource("GradientTexture2D_tsqxj")
+
+[sub_resource type="Sky" id="Sky_a0usx"]
+sky_material = SubResource("PanoramaSkyMaterial_vedx8")
+
+[sub_resource type="Environment" id="Environment_a0wee"]
+background_mode = 2
+sky = SubResource("Sky_a0usx")
+ambient_light_source = 3
+ambient_light_color = Color(0.331538, 0.437518, 0.472877, 1)
+ambient_light_sky_contribution = 0.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_rwoem")
+data = {
+"cells": PackedInt32Array(0, 0, 0, 2, 0, 1, 65534, 0, 2)
+}
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58296, 0.954511)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_wtyy0")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_yttal")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02771, 7.63266)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.295108, 0.955464, 0, -0.955464, 0.295108, 0, 4.83629, 3.02739)
+light_energy = 0.5
+shadow_enabled = true
+shadow_blur = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98607, 4.37213, 0)
+material_override = ExtResource("2_bi5ae")
+mesh = SubResource("BoxMesh_ani3p")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a0wee")

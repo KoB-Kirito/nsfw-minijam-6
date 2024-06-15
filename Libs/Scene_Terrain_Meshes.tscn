@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8dc4rbtrojvr"]
+
+[ext_resource type="PackedScene" uid="uid://beqwy3hcyicpn" path="res://Imports/Grid.gltf" id="1_oar7m"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Grid" parent="." instance=ExtResource("1_oar7m")]
