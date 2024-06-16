@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpmpy0mwdn38r"
+path="res://.godot/imported/healed2.wav-35e4a0d099fb9f437117eb5439708893.sample"
+
+[deps]
+
+source_file="res://assets/audio/voices/catgirl/Type 1/healed2.wav"
+dest_files=["res://.godot/imported/healed2.wav-35e4a0d099fb9f437117eb5439708893.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

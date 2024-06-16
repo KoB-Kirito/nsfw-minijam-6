@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wrsjmbvfb83i"
+path="res://.godot/imported/blizzard.wav-46c154ff76e63956c180cf12cdf19c65.sample"
+
+[deps]
+
+source_file="res://assets/audio/voices/catgirl/Type 1/blizzard.wav"
+dest_files=["res://.godot/imported/blizzard.wav-46c154ff76e63956c180cf12cdf19c65.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

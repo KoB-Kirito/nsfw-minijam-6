@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://by60yabue0mk8"
+path="res://.godot/imported/03-i'm a little under the weather today.wav-b3b10316deff3f3f7ea4ee6179bd8b14.sample"
+
+[deps]
+
+source_file="res://assets/audio/voices/catgirl/03-i'm a little under the weather today.wav"
+dest_files=["res://.godot/imported/03-i'm a little under the weather today.wav-b3b10316deff3f3f7ea4ee6179bd8b14.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

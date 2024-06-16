@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://g4vuoghrorix"
+path="res://.godot/imported/02-i'm sorry but i don't feel the same way (rejection).wav-bff0bfc32f9892d8c9de13fe0f75d0ba.sample"
+
+[deps]
+
+source_file="res://assets/audio/voices/catgirl/02-i'm sorry but i don't feel the same way (rejection).wav"
+dest_files=["res://.godot/imported/02-i'm sorry but i don't feel the same way (rejection).wav-bff0bfc32f9892d8c9de13fe0f75d0ba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

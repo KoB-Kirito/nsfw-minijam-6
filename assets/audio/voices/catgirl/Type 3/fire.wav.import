@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5rjhm2uu6y1t"
+path="res://.godot/imported/fire.wav-0f9eeab373911b6b96420713312c79bc.sample"
+
+[deps]
+
+source_file="res://assets/audio/voices/catgirl/Type 3/fire.wav"
+dest_files=["res://.godot/imported/fire.wav-0f9eeab373911b6b96420713312c79bc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

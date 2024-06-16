@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cxgp3vw7pem2v"
+path="res://.godot/imported/cure.wav-c33a89cb4844c17cb1820abfd32ebde9.sample"
+
+[deps]
+
+source_file="res://assets/audio/voices/catgirl/Type 3/cure.wav"
+dest_files=["res://.godot/imported/cure.wav-c33a89cb4844c17cb1820abfd32ebde9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

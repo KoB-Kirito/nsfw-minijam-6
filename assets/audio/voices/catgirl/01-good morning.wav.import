@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cy6rog2nu1l4j"
+path="res://.godot/imported/01-good morning.wav-23859bb9429034c8bd077105cbbcf4ec.sample"
+
+[deps]
+
+source_file="res://assets/audio/voices/catgirl/01-good morning.wav"
+dest_files=["res://.godot/imported/01-good morning.wav-23859bb9429034c8bd077105cbbcf4ec.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

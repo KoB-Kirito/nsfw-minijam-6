@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwb162c5iqs8w"
+path="res://.godot/imported/attack3.wav-5fa9fc21194e8a63db1e66228a00c0f8.sample"
+
+[deps]
+
+source_file="res://assets/audio/voices/catgirl/Type 2/attack3.wav"
+dest_files=["res://.godot/imported/attack3.wav-5fa9fc21194e8a63db1e66228a00c0f8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

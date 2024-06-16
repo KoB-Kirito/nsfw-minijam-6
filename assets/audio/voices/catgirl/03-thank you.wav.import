@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3r5es2vjy4n3"
+path="res://.godot/imported/03-thank you.wav-2e6f5e1880b848af1f7ac5be17adf7b4.sample"
+
+[deps]
+
+source_file="res://assets/audio/voices/catgirl/03-thank you.wav"
+dest_files=["res://.godot/imported/03-thank you.wav-2e6f5e1880b848af1f7ac5be17adf7b4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

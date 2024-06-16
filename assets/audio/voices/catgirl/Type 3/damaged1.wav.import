@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4x0q1omdfy2s"
+path="res://.godot/imported/damaged1.wav-cd466bbc6b730c8e9c68abb4de05f383.sample"
+
+[deps]
+
+source_file="res://assets/audio/voices/catgirl/Type 3/damaged1.wav"
+dest_files=["res://.godot/imported/damaged1.wav-cd466bbc6b730c8e9c68abb4de05f383.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

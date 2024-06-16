@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://7dg8yiuwe0y6"
+path="res://.godot/imported/02-oh is this the kinda thing you're into.wav-91e837b87db8628f02a440d9c153e3a5.sample"
+
+[deps]
+
+source_file="res://assets/audio/voices/catgirl/02-oh is this the kinda thing you're into.wav"
+dest_files=["res://.godot/imported/02-oh is this the kinda thing you're into.wav-91e837b87db8628f02a440d9c153e3a5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

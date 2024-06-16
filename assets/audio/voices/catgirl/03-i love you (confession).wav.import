@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0yy1s1wepn81"
+path="res://.godot/imported/03-i love you (confession).wav-290188c456e315ce3833f0d16ecaf22c.sample"
+
+[deps]
+
+source_file="res://assets/audio/voices/catgirl/03-i love you (confession).wav"
+dest_files=["res://.godot/imported/03-i love you (confession).wav-290188c456e315ce3833f0d16ecaf22c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
