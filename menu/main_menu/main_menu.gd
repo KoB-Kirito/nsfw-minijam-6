@@ -18,6 +18,8 @@ func _ready() -> void:
 
 
 func _on_start_button_pressed() -> void:
+	PauseMenu.enabled = true
+	
 	var transition_options := SceneTransition.Options.new(start_scene)
 	transition_options.duration = transition_duration
 	transition_options.color = transition_color

@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1it5tbiaxv8a"]
+[gd_scene load_steps=16 format=3 uid="uid://d1it5tbiaxv8a"]
 
+[ext_resource type="Script" path="res://game/levels/testlevel.gd" id="1_5yc4w"]
 [ext_resource type="MeshLibrary" uid="uid://dfv7wbqvrkh0g" path="res://assets/libraries/Lib_Terrain.tres" id="1_rwoem"]
 [ext_resource type="Material" uid="uid://8be2olkul00i" path="res://assets/materials/Mat_LevelGrid.tres" id="2_bi5ae"]
 [ext_resource type="PackedScene" uid="uid://duqcippdw1h7s" path="res://game/camera/Camera25D.tscn" id="2_txtxq"]
@@ -44,7 +45,8 @@ height = 4.0
 radial_segments = 8
 rings = 1
 
-[node name="Node3D" type="Node3D"]
+[node name="Testlevel" type="Node3D"]
+script = ExtResource("1_5yc4w")
 
 [node name="Camera25D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_txtxq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 12)
