@@ -1,71 +1,131 @@
 extends CharacterBody3D
 
 
+## Set camera that should be moved by the player script
+@export var camera: Camera3D
+
 @export_group("Movement")
-@export var speed : float = 5.0
-@export var smooth_speed: float = 10.0
-@export var rotation_speed: float = 5.0
+## Maximum speed in m/s
+@export_range(0.0, 16.0, 0.2) var maximum_speed: float = 8.0
+## Acceleration in m/s (acceleration = maximum_speed -> 1 second to reach maximum_speed)
+@export_range(0.0, 128.0, 0.5) var acceleration: float = 32.0
+## De-acceleration in m/s (de-acceleration = maximum_speed -> 1 second to reach 0)
+@export_range(0.0, 128.0, 0.5) var de_acceleration: float = 64.0
+## Acceleration and de-acceleration are multiplied by friction
+@export_range(0.0, 2.0, 0.1) var friction: float = 1.0
 
 @export_group("Jump")
-@export var jump_velocity: float = 4.5
-@export var gravity: float = 9.8
-## What the fuck does this do?
-@export var fall_decay: float = 2.0
+## Jump impuls strength in m/s
+@export_range(0.0, 32.0, 0.5) var jump_velocity: float = 16.0
+## Gravity is multiplied by this value while rising
+@export_range(0.0, 16.0, 0.5) var gravity_multiplyer_rise: float = 6.0
+## Gravity multiplyer used while rising and holding jump
+@export_range(0.0, 16.0, 0.5) var gravity_multiplyer_rise_jumping: float = 4.0
+## Gravity is multiplied by this value while falling
+@export_range(0.0, 16.0, 0.5) var gravity_multiplyer_fall: float = 10.0
+## Gravity multiplyer used while falling and holding jump
+@export_range(0.0, 16.0, 0.5) var gravity_multiplyer_fall_jumping: float = 8.0
+## Gravity multiplied by this is the maximum falling speed
+@export_range(0.0, 4.0, 0.2) var maximum_falling_speed_multiplyer: float = 2.0
+
+@export_group("Animation")
+## How fast the model rotates when changing input_x
+@export var rotation_speed: float = 20.0
 
 @export_group("Camera")
-@export var camera_forward_distance: float = 2.0
-@export var camera_forward_speed: float = 0.5
-@export var camera_target_offset: Vector3 = Vector3(0, 2.25, 0)
+## How far the camera moves in the input_x the player moves in m
+@export_range(0.0, 16.0, 0.5) var camera_look_ahead_distance: float = 8.0
+@export_range(0.0, 16.0, 0.5) var camera_look_ahead_speed: float = 2.0
 
 
 var last_direction: Vector3 = Vector3.RIGHT
 var camera_current_distance: float = 0
 
+@onready var camera_offset: Vector3 = abs(global_position - camera.global_position)
 
 #HACK
 @onready var animation_tree: AnimationTree = find_child("AnimationTree")
 
 
 func _physics_process(delta):
-	# Add the gravity.
+	# apply gravity
 	if not is_on_floor():
 		if Input.is_action_pressed("jump"):
-			velocity.y -= gravity * delta
+			if velocity.y < 0:
+				# falling
+				velocity += get_gravity() * gravity_multiplyer_fall_jumping * delta
+				
+			else:
+				# rising
+				velocity += get_gravity() * gravity_multiplyer_rise_jumping * delta
+			
 		else:
-			velocity.y -= gravity * delta * 2
-	else:
-		velocity.y = 0
+			if velocity.y < 0:
+				# falling
+				velocity += get_gravity() * gravity_multiplyer_fall * delta
+				
+			else:
+				# rising
+				velocity += get_gravity() * gravity_multiplyer_rise * delta
+		
+		# cap falling speed
+		if velocity.y < get_gravity().y * maximum_falling_speed_multiplyer:
+			velocity.y = get_gravity().y * maximum_falling_speed_multiplyer
 	
-	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	
+	# handle jump
+	if Input.is_action_just_pressed("jump"):# and is_on_floor(): #TEST
 		velocity.y = jump_velocity
 	
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("left", "right", "crouch", "jump")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, 0)).normalized()
-	
-	if is_on_floor(): # don't walk while airborn
-		velocity.x = lerp(velocity.x, direction.x * speed, smooth_speed * delta)
-		velocity.z = lerp(velocity.z, direction.z * speed, smooth_speed * delta)
+	# handle movement
+	var input_x := Input.get_axis("left", "right")
+	if input_x > 0:
+		# right
+		if velocity.x < 0:
+			# de-accelerating toward 0
+			velocity.x = move_toward(velocity.x, maximum_speed, de_acceleration * friction * delta)
+			
+		else:
+			# accelerating
+			velocity.x = move_toward(velocity.x, maximum_speed, acceleration * friction * delta)
 		
-		# set animation blend based on speed
-		animation_tree.set("parameters/IdleToRun/blend_position", velocity.length() / speed)
+	elif input_x < 0:
+		# left
+		if velocity.x > 0:
+			# de-accelerating toward 0
+			velocity.x = move_toward(velocity.x, -maximum_speed, de_acceleration * friction * delta)
+			
+		else:
+			# accelerating
+			velocity.x = move_toward(velocity.x, -maximum_speed, acceleration * friction * delta)
+		
 	else:
-		velocity.x = lerp(velocity.x, direction.x * speed, smooth_speed * delta / fall_decay)
-		velocity.z = lerp(velocity.z, direction.z * speed, smooth_speed * delta / fall_decay)
-		# TODO: falling???
-		animation_tree.set("parameters/IdleToRun/blend_position", 0)
+		# stop
+		velocity.x = move_toward(velocity.x, 0, de_acceleration * friction * delta)
 	
 	move_and_slide()
 	
 	
-	# save last move direction
-	if direction:
-		last_direction = direction
-		camera_current_distance = lerp(camera_current_distance, direction.x * camera_forward_distance, smooth_speed * delta * camera_forward_speed)
-		%CameraTarget.global_position = global_position + camera_target_offset + Vector3.RIGHT * camera_current_distance
+	# animation
+	if is_on_floor():
+		# set animation blend based on speed
+		animation_tree.set("parameters/IdleToRun/blend_position", get_real_velocity().length() / maximum_speed)
+		
+	else:
+		#TODO: falling???
+		animation_tree.set("parameters/IdleToRun/blend_position", 0)
 	
 	# rotate player to face movement direction
+	if input_x < -0.01:
+		last_direction = Vector3.LEFT
+		
+	elif input_x > 0.01:
+		last_direction = Vector3.RIGHT
+	
 	%Model.rotation.y = lerp_angle(%Model.rotation.y, atan2(last_direction.x, last_direction.z), rotation_speed * delta)
+	
+	
+	# camera
+	camera_current_distance = lerp(camera_current_distance, get_real_velocity().normalized().x * camera_look_ahead_distance, camera_look_ahead_speed * delta)
+	%CameraTarget.global_position = global_position + Vector3.RIGHT * camera_current_distance
