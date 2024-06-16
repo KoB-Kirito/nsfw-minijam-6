@@ -8,10 +8,13 @@ const WINDOW_MODES = [
 ]
 
 const RESOLUTIONS = {
-		"640 x 480"   : Vector2i(640, 480),
-		"1280 x 648"  : Vector2i(1280, 648),
+		"640 x 360"   : Vector2i(640, 360),
+		"1280 x 720"  : Vector2i(1280, 720),
 		"1920 x 1080" : Vector2i(1920, 1080),
-		"3840 x 1600" : Vector2i(3840, 1600),
+		"2560 x 1440" : Vector2i(2560, 1440),
+		"3840 x 2160" : Vector2i(3840, 2160),
+		"2560 x 1080" : Vector2i(2560, 1080),
+		"3440 x 1440" : Vector2i(3440, 1440),
 }
 
 
@@ -40,6 +43,9 @@ func setup_video_options() -> void:
 	# resolution
 	for resolution in RESOLUTIONS:
 		%ResolutionOptionButton.add_item(resolution)
+	
+	#TODO: Select option if available
+	%ResolutionOptionButton.text = get_screen_size_string()
 
 
 func _on_window_mode_option_button_item_selected(index: int) -> void:
@@ -47,14 +53,22 @@ func _on_window_mode_option_button_item_selected(index: int) -> void:
 		0: # Fullscreen
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 			%ResolutionOptionButton.disabled = true
+			%ResolutionOptionButton.text = get_screen_size_string()
 		
 		1: # Borderless
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			%ResolutionOptionButton.disabled = true
+			%ResolutionOptionButton.text = get_screen_size_string()
 		
 		2: # Window
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			%ResolutionOptionButton.disabled = false
+			%ResolutionOptionButton.text = get_screen_size_string()
+
+
+func get_screen_size_string() -> String:
+	var screen_size := DisplayServer.window_get_size()
+	return str(screen_size.x) + " x " + str(screen_size.y)
 
 
 func _on_resolution_option_button_item_selected(index: int) -> void:
