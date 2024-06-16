@@ -3,7 +3,7 @@
 [ext_resource type="MeshLibrary" uid="uid://dfv7wbqvrkh0g" path="res://assets/libraries/Lib_Terrain.tres" id="1_rwoem"]
 [ext_resource type="Material" uid="uid://8be2olkul00i" path="res://assets/materials/Mat_LevelGrid.tres" id="2_bi5ae"]
 [ext_resource type="PackedScene" uid="uid://duqcippdw1h7s" path="res://game/camera/Camera25D.tscn" id="2_txtxq"]
-[ext_resource type="PackedScene" uid="uid://dmqvtxxrijsq0" path="res://game/player/player.tscn" id="4_54c4c"]
+[ext_resource type="PackedScene" uid="uid://d2vq5gne71oyg" path="res://game/player/player.tscn" id="4_54c4c"]
 [ext_resource type="Script" path="res://game/levels/turm.gd" id="6_5b8mj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ani3p"]
@@ -47,7 +47,7 @@ rings = 1
 [node name="Node3D" type="Node3D"]
 
 [node name="Camera25D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_txtxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 12)
 fov = 30.0
 target = NodePath("../Player")
 smoothSpeed = 10.0
@@ -60,7 +60,9 @@ mesh = SubResource("BoxMesh_ani3p")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_a0wee")
 
-[node name="Player" parent="." instance=ExtResource("4_54c4c")]
+[node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("4_54c4c")]
+camera = NodePath("../Camera25D")
+camera_look_ahead_distance = 4.0
 
 [node name="Turm" type="Node3D" parent="." node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -1, -6)

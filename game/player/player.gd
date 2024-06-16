@@ -127,5 +127,5 @@ func _physics_process(delta):
 	
 	
 	# camera
-	camera_current_distance = lerp(camera_current_distance, get_real_velocity().normalized().x * camera_look_ahead_distance, camera_look_ahead_speed * delta)
+	camera_current_distance = lerp(camera_current_distance, last_direction.x * camera_look_ahead_distance, camera_look_ahead_speed * delta)
 	%CameraTarget.global_position = global_position + Vector3.RIGHT * camera_current_distance
