@@ -69,10 +69,6 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://assets/models/player/Mat_Player_Cloth.tres"
 },
-"Mat_Kleid-Weiß-Transparent": {
-"use_external/enabled": true,
-"use_external/path": "res://assets/models/player/Mat_Player_Cloth.tres"
-},
 "Mat_Skin": {
 "use_external/enabled": true,
 "use_external/path": "res://assets/models/player/Mat_Player_Skin.tres"
