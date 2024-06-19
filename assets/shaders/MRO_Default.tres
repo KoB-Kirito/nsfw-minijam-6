@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=11 format=3 uid="uid://dorpwb351y2l4"]
+[gd_resource type="VisualShader" load_steps=11 format=3 uid="uid://cr52wbyngbypj"]
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_3gp7h"]
 operator = 2
@@ -42,7 +42,7 @@ function = 31
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_toon, specular_schlick_ggx;
 
 uniform sampler2D Albedo : source_color;
 uniform sampler2D MRO : hint_default_black;
@@ -96,14 +96,15 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-322.201, -49.7645)
+graph_offset = Vector2(-322.401, 169.897)
+modes/diffuse = 3
 nodes/fragment/0/position = Vector2(1640, 240)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_rw0si")
 nodes/fragment/2/position = Vector2(-20, 100)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_tem3f")
 nodes/fragment/3/position = Vector2(-20, 480)
 nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_qugux")
-nodes/fragment/4/position = Vector2(-40, 920)
+nodes/fragment/4/position = Vector2(20, 920)
 nodes/fragment/5/node = SubResource("VisualShaderNodeTexture2DParameter_hamb7")
 nodes/fragment/5/position = Vector2(-660, 100)
 nodes/fragment/6/node = SubResource("VisualShaderNodeTexture2DParameter_3dv8r")
