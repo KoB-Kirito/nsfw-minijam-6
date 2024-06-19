@@ -1,0 +1,94 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bn7kep7dhovkg"
+path="res://.godot/imported/player.fbx-03b8cc9b9813ecfc8af5a84d418c45cc.scn"
+
+[deps]
+
+source_file="res://assets/models/player/player.fbx"
+dest_files=["res://.godot/imported/player.fbx-03b8cc9b9813ecfc8af5a84d418c45cc.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Mat_Augen": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/player/Mat_Player_Skin.tres"
+},
+"Mat_Gold": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/player/Mat_Player_Cloth.tres"
+},
+"Mat_Haare": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/player/Mat_Player_Haar.tres"
+},
+"Mat_Katzenohren": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/player/Mat_Player_Haar.tres"
+},
+"Mat_Katzenschwanz": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/player/Mat_Player_Haar.tres"
+},
+"Mat_Kleid-Blau": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/player/Mat_Player_Cloth.tres"
+},
+"Mat_Kleid-Blau_Muster": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/player/Mat_Player_Cloth.tres"
+},
+"Mat_Kleid-Weiß": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/player/Mat_Player_Cloth.tres"
+},
+"Mat_Kleid-Weiß-Muster": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/player/Mat_Player_Cloth.tres"
+},
+"Mat_Kleid-Weiß-Transparent": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/player/Mat_Player_Cloth.tres"
+},
+"Mat_Skin": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/player/Mat_Player_Skin.tres"
+},
+"Mat_Strümpfe": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/player/Mat_Player_Skin.tres"
+},
+"Mat_Wimpern": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/player/Mat_Player_Skin.tres"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+gltf/naming_version=1
+gltf/embedded_image_handling=1

@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://b0ias3fifw87l"]
+
+[ext_resource type="Shader" path="res://assets/shaders/MRO_Transparent.tres" id="1_cey6a"]
+[ext_resource type="Texture2D" uid="uid://bo3yprlnk632k" path="res://assets/models/player/Cloth_Albedo.png" id="2_pp4fk"]
+[ext_resource type="Texture2D" uid="uid://bsdqviqid3ks2" path="res://assets/models/player/Cloth_Masks.png" id="3_ymfq5"]
+[ext_resource type="Texture2D" uid="uid://8lppt3b324b2" path="res://assets/models/player/Cloth_Normal.png" id="4_prti6"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_cey6a")
+shader_parameter/Glossy = 1.0
+shader_parameter/Albedo = ExtResource("2_pp4fk")
+shader_parameter/MRO = ExtResource("3_ymfq5")
+shader_parameter/Normal = ExtResource("4_prti6")
