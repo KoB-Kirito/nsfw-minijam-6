@@ -23,6 +23,8 @@ extends Control
 
 
 func _ready() -> void:
+	PauseMenu.enabled = false
+	
 	var tween := create_tween()
 	
 	# godot

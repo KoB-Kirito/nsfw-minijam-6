@@ -7,7 +7,7 @@ var options: Control
 
 
 ## Pause menu can't be opened if disabled
-var enabled: bool = false
+var enabled: bool = true
 
 var music_bus: int
 var sounds_bus: int
