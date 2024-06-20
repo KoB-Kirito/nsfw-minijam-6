@@ -34,6 +34,7 @@ func _on_volume_slider_focus_exited() -> void:
 
 
 func percent_to_db(percent: float) -> float:
+	print(linear_to_db(percent / 100.0))
 	return linear_to_db(percent / 100.0)
 
 func db_to_percent(db: float) -> float:

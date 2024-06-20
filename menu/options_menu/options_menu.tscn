@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://csligmwblw82j"]
+[gd_scene load_steps=23 format=3 uid="uid://csligmwblw82j"]
 
 [ext_resource type="Theme" uid="uid://c46na1j7c1bq" path="res://menu/theme.tres" id="1_63gep"]
 [ext_resource type="Script" path="res://menu/options_menu/options_menu.gd" id="2_rkcsq"]
@@ -16,6 +16,15 @@
 [ext_resource type="AudioStream" uid="uid://bkqj6tubndnak" path="res://assets/audio/voices/catgirl/meow/001_meow.wav" id="11_xqcq5"]
 [ext_resource type="AudioStream" uid="uid://ly6tatjnwbiv" path="res://assets/audio/voices/catgirl/power meter full/003_power-meter-full.wav" id="12_lb820"]
 [ext_resource type="AudioStream" uid="uid://0wgnn86ehi41" path="res://assets/audio/voices/catgirl/Type 1/tornado.wav" id="13_0fjgh"]
+[ext_resource type="Script" path="res://menu/options_menu/controls.gd" id="17_4gdli"]
+[ext_resource type="PackedScene" uid="uid://d2juwc41hmqfg" path="res://menu/options_menu/keybind_option.tscn" id="18_4571d"]
+
+[sub_resource type="Gradient" id="Gradient_q0b0g"]
+colors = PackedColorArray(0.252, 0.28, 0.28, 1, 0, 0.656784, 0.658214, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kd5hc"]
+gradient = SubResource("Gradient_q0b0g")
+fill_to = Vector2(0, 1)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_41flq"]
 random_pitch = 1.2
@@ -44,14 +53,14 @@ grow_vertical = 2
 theme = ExtResource("1_63gep")
 script = ExtResource("2_rkcsq")
 
-[node name="BackgroundFade" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0.752941)
+texture = SubResource("GradientTexture2D_kd5hc")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -145,6 +154,36 @@ text = "Resolution"
 
 [node name="ResolutionOptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/TabContainer/Video/MarginContainer/GridContainer"]
 unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Controls" type="TabBar" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("17_4gdli")
+metadata/_tab_index = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/Controls"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/Controls/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="KeybindOptionContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Controls/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="KeybindOption" parent="MarginContainer/VBoxContainer/TabContainer/Controls/ScrollContainer/MarginContainer/KeybindOptionContainer" instance=ExtResource("18_4571d")]
 layout_mode = 2
 
 [node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer"]

@@ -13,6 +13,8 @@ extends Control
 
 
 func _ready() -> void:
+	PauseMenu.enabled = false
+	
 	if bgm:
 		Bgm.fade_to(bgm, volume_db, 0.0)
 

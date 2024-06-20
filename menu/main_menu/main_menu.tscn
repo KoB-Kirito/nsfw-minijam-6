@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn4dashthsf4l"]
+[gd_scene load_steps=7 format=3 uid="uid://dn4dashthsf4l"]
 
 [ext_resource type="Theme" uid="uid://c46na1j7c1bq" path="res://menu/theme.tres" id="1_xjn03"]
 [ext_resource type="Script" path="res://menu/main_menu/main_menu.gd" id="2_opjhm"]
 [ext_resource type="AudioStream" uid="uid://2nrnsvnhc8py" path="res://assets/audio/bgm/Main Menu Music.wav" id="3_cg7ky"]
 [ext_resource type="PackedScene" uid="uid://csligmwblw82j" path="res://menu/options_menu/options_menu.tscn" id="3_d7lqq"]
+
+[sub_resource type="Gradient" id="Gradient_a0orp"]
+colors = PackedColorArray(0.641443, 0.462818, 0, 1, 0.503659, 1, 0.47172, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7xhay"]
+gradient = SubResource("Gradient_a0orp")
+fill_to = Vector2(0, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -16,6 +23,16 @@ theme = ExtResource("1_xjn03")
 script = ExtResource("2_opjhm")
 start_scene = "res://game/levels/Testlevel.tscn"
 bgm = ExtResource("3_cg7ky")
+volume_db = -8.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_7xhay")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -32,14 +49,17 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Options"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Exit"
 

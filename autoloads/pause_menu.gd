@@ -101,8 +101,4 @@ func _on_options_button_pressed() -> void:
 
 
 func _on_exit_button_pressed() -> void:
-	#TEST
-	get_tree().quit()
-	
-	#TODO: Quit to main menu?
-	#get_tree().change_scene_to_file(main_menu)
+	get_tree().change_scene_to_file(main_menu)
