@@ -1,9 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://cquerba72hpg8"]
+[gd_scene load_steps=5 format=3 uid="uid://cquerba72hpg8"]
 
 [ext_resource type="Script" path="res://game/levels/intro/intro.gd" id="1_jocwx"]
 [ext_resource type="Resource" path="res://game/levels/intro/intro.dtl" id="2_0dm4w"]
+[ext_resource type="AudioStream" uid="uid://5h6fivxrh7cb" path="res://assets/audio/bgm/What Is Love.mp3" id="3_0kifk"]
+[ext_resource type="Texture2D" uid="uid://de63qy4itp3sa" path="res://game/levels/intro/room_placeholder.jpg" id="4_4rutx"]
 
 [node name="Intro" type="Node"]
 script = ExtResource("1_jocwx")
 timeline = ExtResource("2_0dm4w")
 next_scene = "res://game/levels/Testlevel.tscn"
+next_bgm = ExtResource("3_0kifk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_4rutx")
+expand_mode = 2

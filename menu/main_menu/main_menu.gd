@@ -6,6 +6,7 @@ extends Control
 @export_group("Transition")
 @export var transition_duration: float = 1.0
 @export var transition_color: Color = Color.BLACK
+@export var next_song: AudioStream
 
 @export_group("BGM")
 @export var bgm: AudioStream
@@ -25,6 +26,7 @@ func _on_start_button_pressed() -> void:
 	var transition_options := SceneTransition.Options.new(start_scene)
 	transition_options.duration = transition_duration
 	transition_options.color = transition_color
+	transition_options.new_bgm = next_song
 	
 	SceneTransition.change_scene(transition_options)
 

@@ -1,4 +1,24 @@
-Narrator bla bla
-join nyu right
-nyu: Hi
-nyu: Test test
+jump long
+# short version
+join nyu center [animation="Fade In Out"]
+[wait time="1.0"]
+Nyu is a naughty girl. Watching hentai and playing horny games all day. Instead of searching for a job, she rather stays at home.
+update nyu right [move_time="0.5" move_ease="in" move_trans="expo"]
+join angel left [animation="Slide Left In Out"]
+Worrying for her an angel curses her with a chastity belt and sends her into a mysterious world.
+To unlock the belt she has to find the keys to its locks. But the place she was send in will test her strength to overcome her desires.
+leave --All--
+# Long version
+label long
+join nyu center
+Nyu is playing hentai games again..
+update nyu right [move_time="0.5" move_ease="in" move_trans="linear"]
+nyu: Come on, just two waves more..
+join angel left
+angel: There she is again, playing her dirty games. If it goes on like this, she'll never amount to anything.
+[wait time="1.0"]
+update nyu [animation="Tada" length="1.0"]
+nyu: Yeah, I finally unlocked the swimsuit!
+update angel [animation="Shake X" wait="true"]
+angel: That's enough! I will teach her a lesson!
+[Epic casting spell animation that sends nyu in the hentai game she was playing..]

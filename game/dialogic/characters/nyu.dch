@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(0.788235, 0.231373, 1, 1),
+"color": Color(0.819608, 0.403922, 0.686275, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
@@ -17,7 +17,7 @@
 "portraits": {
 "normal": {
 "export_overrides": {
-"image": "\"res://assets/dialog/nyu_placeholder.jpg\""
+"image": "\"res://game/dialogic/characters/nyu.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

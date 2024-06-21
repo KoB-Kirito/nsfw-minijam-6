@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn4dashthsf4l"]
+[gd_scene load_steps=8 format=3 uid="uid://dn4dashthsf4l"]
 
 [ext_resource type="Theme" uid="uid://c46na1j7c1bq" path="res://menu/theme.tres" id="1_xjn03"]
 [ext_resource type="Script" path="res://menu/main_menu/main_menu.gd" id="2_opjhm"]
 [ext_resource type="AudioStream" uid="uid://2nrnsvnhc8py" path="res://assets/audio/bgm/Main Menu Music.wav" id="3_cg7ky"]
 [ext_resource type="PackedScene" uid="uid://csligmwblw82j" path="res://menu/options_menu/options_menu.tscn" id="3_d7lqq"]
+[ext_resource type="AudioStream" uid="uid://dmek1afhig85q" path="res://assets/audio/bgm/Morning.mp3" id="3_jyqch"]
 
 [sub_resource type="Gradient" id="Gradient_a0orp"]
 colors = PackedColorArray(0.641443, 0.462818, 0, 1, 0.503659, 1, 0.47172, 1)
@@ -22,6 +23,8 @@ grow_vertical = 2
 theme = ExtResource("1_xjn03")
 script = ExtResource("2_opjhm")
 start_scene = "res://game/levels/intro/intro.tscn"
+transition_duration = 4.0
+next_song = ExtResource("3_jyqch")
 bgm = ExtResource("3_cg7ky")
 volume_db = -8.0
 
