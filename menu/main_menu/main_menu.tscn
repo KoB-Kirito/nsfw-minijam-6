@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xjn03")
 script = ExtResource("2_opjhm")
-start_scene = "res://game/levels/Testlevel.tscn"
+start_scene = "res://game/levels/intro/intro.tscn"
 bgm = ExtResource("3_cg7ky")
 volume_db = -8.0
 

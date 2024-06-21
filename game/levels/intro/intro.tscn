@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cquerba72hpg8"]
+
+[ext_resource type="Script" path="res://game/levels/intro/intro.gd" id="1_jocwx"]
+[ext_resource type="Resource" path="res://game/levels/intro/intro.dtl" id="2_0dm4w"]
+
+[node name="Intro" type="Node"]
+script = ExtResource("1_jocwx")
+timeline = ExtResource("2_0dm4w")
+next_scene = "res://game/levels/Testlevel.tscn"
