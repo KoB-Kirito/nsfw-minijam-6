@@ -7,9 +7,13 @@ extends Node
 
 
 func _ready() -> void:
+	PauseMenu.enable()
+	
 	Dialogic.start(timeline)
 	
 	await Dialogic.timeline_ended
+	
+	PauseMenu.enable_level_buttons()
 	
 	var transition := SceneTransition.Options.new(next_scene)
 	transition.duration = 4.0

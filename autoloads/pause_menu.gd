@@ -23,6 +23,8 @@ var title: String:
 
 
 func _ready() -> void:
+	%RestartButton.hide()
+	%ExitButton.hide()
 	hide()
 
 
@@ -60,6 +62,19 @@ func toggle() -> void:
 		Events.game_unpaused.emit()
 
 
+func enable() -> void:
+	enabled = true
+
+func disable() -> void:
+	enabled = false
+
+
+func enable_level_buttons() -> void:
+	%RestartButton.show()
+	#TODO: Enable when fixed?
+	#%ExitButton.show()
+
+
 # play a sample when value is changed
 func _on_music_slider_drag_started() -> void:
 	%snd_sounds.stop()
@@ -89,6 +104,7 @@ func _on_resume_button_pressed() -> void:
 
 func _on_restart_button_pressed() -> void:
 	toggle()
+	Dialogic.end_timeline()
 	get_tree().reload_current_scene()
 
 
@@ -101,4 +117,12 @@ func _on_options_button_pressed() -> void:
 
 
 func _on_exit_button_pressed() -> void:
+	toggle()
+	%RestartButton.hide()
+	%ExitButton.hide()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	#TODO: Bugs out when starting a cancelled timeline later
+	Dialogic.end_timeline()
+	
 	get_tree().change_scene_to_file(main_menu)
