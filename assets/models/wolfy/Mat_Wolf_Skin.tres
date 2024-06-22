@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://b3xgevvcsqrjh"]
+
+[ext_resource type="Shader" uid="uid://cr52wbyngbypj" path="res://assets/shaders/MRO_Default.tres" id="1_a581q"]
+[ext_resource type="Texture2D" uid="uid://dg8to18ktdlde" path="res://assets/models/wolfy/Wolf_Skin_Albedo.png" id="2_k5244"]
+[ext_resource type="Texture2D" uid="uid://b5i0pges234bn" path="res://assets/models/wolfy/Wolf_Skin_Masks.png" id="3_i81kx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_a581q")
+shader_parameter/Glossy = 1.0
+shader_parameter/Albedo = ExtResource("2_k5244")
+shader_parameter/MRO = ExtResource("3_i81kx")

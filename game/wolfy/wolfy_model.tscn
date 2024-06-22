@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://blsm7sha38xcx"]
+
+[ext_resource type="PackedScene" uid="uid://bornr0iqp7msf" path="res://assets/models/wolfy/wolfy.fbx" id="1_b7p3d"]
+
+[node name="wolfy" instance=ExtResource("1_b7p3d")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d1it5tbiaxv8a"]
+[gd_scene load_steps=18 format=3 uid="uid://d1it5tbiaxv8a"]
 
 [ext_resource type="Script" path="res://game/levels/testlevel.gd" id="1_5yc4w"]
 [ext_resource type="MeshLibrary" uid="uid://dfv7wbqvrkh0g" path="res://assets/libraries/Lib_Terrain.tres" id="1_rwoem"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://duqcippdw1h7s" path="res://game/camera/Camera25D.tscn" id="2_txtxq"]
 [ext_resource type="PackedScene" uid="uid://d2vq5gne71oyg" path="res://game/player/player.tscn" id="4_54c4c"]
 [ext_resource type="Script" path="res://game/levels/turm.gd" id="6_5b8mj"]
-[ext_resource type="PackedScene" uid="uid://bn7kep7dhovkg" path="res://assets/models/player/player.fbx" id="7_0kvqp"]
+[ext_resource type="PackedScene" uid="uid://na46jyaytuin" path="res://game/player/player_model.tscn" id="7_hqoft"]
+[ext_resource type="PackedScene" uid="uid://blsm7sha38xcx" path="res://game/wolfy/wolfy_model.tscn" id="8_616kr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ani3p"]
 
@@ -51,6 +52,7 @@ script = ExtResource("1_5yc4w")
 
 [node name="Camera25D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_txtxq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 12)
+current = true
 fov = 30.0
 target = NodePath("../Player")
 smoothSpeed = 10.0
@@ -64,6 +66,7 @@ mesh = SubResource("BoxMesh_ani3p")
 environment = SubResource("Environment_a0wee")
 
 [node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("4_54c4c")]
+visible = false
 camera = NodePath("../Camera25D")
 camera_look_ahead_distance = 4.0
 
@@ -103,5 +106,7 @@ light_energy = 0.5
 shadow_enabled = true
 shadow_blur = 0.0
 
-[node name="player" type="Node3D" parent="." instance=ExtResource("7_0kvqp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48833, 0, 0.683798)
+[node name="player" parent="." instance=ExtResource("7_hqoft")]
+
+[node name="wolfy" parent="." instance=ExtResource("8_616kr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)

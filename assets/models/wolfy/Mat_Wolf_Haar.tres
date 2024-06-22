@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cqi6ybvvrxwrf"]
+
+[ext_resource type="Shader" uid="uid://chfmxaokvgibg" path="res://assets/shaders/Haar_Shader.tres" id="1_lvmeq"]
+[ext_resource type="Texture2D" uid="uid://d3m4000o36g7p" path="res://assets/models/wolfy/Wolf_Haare_Albedo.png" id="2_ujj5l"]
+[ext_resource type="Texture2D" uid="uid://wena2vnqyqgo" path="res://assets/models/player/Haare_Normal.png" id="3_jcuj1"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_lvmeq")
+shader_parameter/Raue = 0.6
+shader_parameter/NormalStrength = 0.5
+shader_parameter/AlphaClip = 0.5
+shader_parameter/Albedo = ExtResource("2_ujj5l")
+shader_parameter/Normal = ExtResource("3_jcuj1")
