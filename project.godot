@@ -33,10 +33,12 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "angel": "res://game/dialogic/characters/angel.dch",
+"faux": "res://game/dialogic/characters/faux.dch",
 "nyu": "res://game/dialogic/characters/nyu.dch"
 }
 directories/dtl_directory={
-"intro": "res://game/levels/intro/intro.dtl"
+"intro": "res://game/levels/intro/intro.dtl",
+"level1_intro": "res://game/levels/level1_intro.dtl"
 }
 layout/style_list=["res://game/dialogic/style/custom_style.tres"]
 layout/default_style="res://game/dialogic/style/custom_style.tres"

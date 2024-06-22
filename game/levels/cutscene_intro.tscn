@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://djan5tyrabooq"]
+
+[ext_resource type="Script" path="res://game/levels/cutscene_intro.gd" id="1_rt5v0"]
+
+[node name="CutsceneIntro" type="Node"]
+script = ExtResource("1_rt5v0")
+timeline = "res://game/levels/level1_intro.dtl"

@@ -1,8 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://na46jyaytuin"]
+[gd_scene load_steps=6 format=3 uid="uid://brywx2kymst78"]
 
 [ext_resource type="PackedScene" uid="uid://bn7kep7dhovkg" path="res://assets/models/player/player.fbx" id="1_67x13"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jeh0q"]
+animation = &"Laufen"
+use_custom_timeline = true
+timeline_length = 0.5
+stretch_time_scale = true
+start_offset = 0.0
+loop_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p46u8"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_6gwbh"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_jeh0q")
+blend_point_0/pos = 1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_p46u8")
+blend_point_1/pos = 0.0
+min_space = 0.0
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3njv5"]
+nodes/IdleToRun/node = SubResource("AnimationNodeBlendSpace1D_6gwbh")
+nodes/IdleToRun/position = Vector2(40, 146.667)
+node_connections = [&"output", 0, &"IdleToRun"]
+
 [node name="player" instance=ExtResource("1_67x13")]
+
+[node name="Neko_Rig" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Neko_Rig" index="0"]
 bones/1/position = Vector3(-2.35873e-06, 0.00089697, 0.00965796)
@@ -119,3 +145,23 @@ bones/113/position = Vector3(0.00249891, -0.00251616, 0.00978801)
 bones/113/rotation = Quaternion(-0.0122636, 0.100274, -0.994638, -0.0221441)
 bones/114/rotation = Quaternion(0.0364802, 0.00510557, 0.0253583, 0.999)
 bones/115/position = Vector3(0, -0.03, 0.013)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeBlendTree_3njv5")
+anim_player = NodePath("../AnimationPlayer")
+parameters/current_length = 1.0
+parameters/current_position = 0.285863
+parameters/current_delta = 0.00694444
+parameters/IdleToRun/current_length = 1.0
+parameters/IdleToRun/current_position = 0.285863
+parameters/IdleToRun/current_delta = 0.00694444
+parameters/IdleToRun/blend_position = 0.0
+parameters/IdleToRun/0/current_length = 0.5
+parameters/IdleToRun/0/current_position = 0.285863
+parameters/IdleToRun/0/current_delta = 0.00694444
+parameters/IdleToRun/1/current_length = 1.0
+parameters/IdleToRun/1/current_position = 0.285863
+parameters/IdleToRun/1/current_delta = 0.00694444
+parameters/output/current_length = 1.0
+parameters/output/current_position = 0.285863
+parameters/output/current_delta = 0.00694444

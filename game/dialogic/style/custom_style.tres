@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DialogicStyle" load_steps=19 format=3 uid="uid://d7rchjbd5jxk"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_t4noc"]
-[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_qagpg"]
+[ext_resource type="PackedScene" path="res://game/dialogic/style/FullBackground/custom_full_background_layer.tscn" id="2_j2u6x"]
 [ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="3_88y21"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_oq1fj"]
 [ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="5_bu7tb"]
@@ -13,10 +13,8 @@
 
 [sub_resource type="Resource" id="Resource_aplfr"]
 script = ExtResource("1_t4noc")
-scene = ExtResource("2_qagpg")
-overrides = {
-"disabled": "true"
-}
+scene = ExtResource("2_j2u6x")
+overrides = {}
 
 [sub_resource type="Resource" id="Resource_54r7o"]
 script = ExtResource("1_t4noc")
@@ -60,4 +58,4 @@ base_overrides = {
 "global_bg_color": "Color(0, 0, 0, 0.752941)"
 }
 layers = Array[ExtResource("1_t4noc")]([SubResource("Resource_aplfr"), SubResource("Resource_54r7o"), SubResource("Resource_8mqk3"), SubResource("Resource_v8jke"), SubResource("Resource_m5r0s"), SubResource("Resource_p3ote"), SubResource("Resource_iffg1"), SubResource("Resource_slh2u")])
-metadata/_latest_layer = -1
+metadata/_latest_layer = 0

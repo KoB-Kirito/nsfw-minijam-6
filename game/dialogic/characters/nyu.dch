@@ -15,6 +15,15 @@
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
+"horny": {
+"export_overrides": {
+"image": "\"res://game/dialogic/characters/nyu.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "normal": {
 "export_overrides": {
 "image": "\"res://game/dialogic/characters/nyu.png\""
@@ -22,6 +31,24 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1.0,
+"scene": ""
+},
+"shocked": {
+"export_overrides": {
+"image": "\"res://game/dialogic/characters/nyu.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"sob": {
+"export_overrides": {
+"image": "\"res://game/dialogic/characters/nyu.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
 "scene": ""
 }
 },

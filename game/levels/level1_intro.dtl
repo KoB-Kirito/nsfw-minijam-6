@@ -1,0 +1,33 @@
+join nyu right
+nyu: What? Where am I?
+# Play animation: look left and right, down > exclamation mark
+[signal arg="intro_1"]
+[wait time="2.0"]
+[sound path="res://assets/audio/voices/catgirl/meow/003_meow.wav" volume="0.0" bus="Voice"]
+nyu: Whaa!? Why am I a catgirl?
+[wait time="1.0" hide_text="false"]
+nyu (horny): Hue hue, I'm kinda cute..
+# Play animation: lifting skirt, exclamation mark
+[signal arg="intro_2"]
+[wait time="1.0"]
+nyu (shocked): What is this?? A chastity belt!?
+nyu (sob): *sob*
+join angel left
+nyu (shocked): Who are you?
+angel: Oh, you can see me? Nice.
+angel: I'm your guardian angel.
+nyu (normal): Ohh, so you are going to rescue me from here?
+angel: No! I send you here.
+angel: This is one of your beloved games you always masturbate to.
+angel: I can't stand your laziness any longer. You have to learn to control yourself. The chastity belt will help you with that.
+angel: Finish the game without touching yourself and I will set you free.
+[wait time="1.0" hide_text="false"]
+nyu (normal): You..
+nyu: You sent me into my favourite game, but I have to wear a chastity beld?
+nyu (sob): You are cruel!
+angel (sigh): *sigh*
+angel (normal): Good luck..
+leave angel
+[wait time="1.0" hide_text="false"]
+nyu (normal): ...
+nyu (horny): My guardian angel is so hot though..

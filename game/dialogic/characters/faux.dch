@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(0.886275, 0.831373, 0.85098, 1),
+"color": Color(0.937255, 0.403922, 0.309804, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
@@ -10,36 +10,18 @@
 },
 "default_portrait": "normal",
 "description": "",
-"display_name": "Angel",
+"display_name": "Faux",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"angry": {
-"export_overrides": {
-"image": ""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
 "normal": {
 "export_overrides": {
-"image": "\"res://game/dialogic/characters/angel_placeholder.png\""
+"image": "\"res://game/dialogic/characters/faux_placeholder.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 0.8,
-"scene": ""
-},
-"sigh": {
-"export_overrides": {
-"image": ""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1.0,
 "scene": ""
 }
 },

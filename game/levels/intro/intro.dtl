@@ -1,5 +1,5 @@
 jump long
-# short version
+# short version, not used I guess
 join nyu center [animation="Fade In Out"]
 [wait time="1.0"]
 Nyu is a naughty girl. Watching hentai and playing horny games all day. Instead of searching for a job, she rather stays at home.
@@ -22,3 +22,8 @@ nyu: Yeah, I finally unlocked the swimsuit!
 update angel [animation="Shake X" wait="true"]
 angel: That's enough! I will teach her a lesson!
 [Epic casting spell animation that sends nyu in the hentai game she was playing..]
+leave --All-- [animation="Zoom In Out" length="2.0"]
+[wait time="2.5"]
+join faux center [animation="Fade Up In Out" length="2.0" wait="true"]
+faux: That could get interesting..
+leave --All-- [animation="Fade Down In Out" length="1.0" wait="true"]
