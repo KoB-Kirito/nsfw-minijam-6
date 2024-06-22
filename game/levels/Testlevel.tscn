@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d1it5tbiaxv8a"]
+[gd_scene load_steps=17 format=3 uid="uid://d1it5tbiaxv8a"]
 
 [ext_resource type="Script" path="res://game/levels/testlevel.gd" id="1_5yc4w"]
 [ext_resource type="MeshLibrary" uid="uid://dfv7wbqvrkh0g" path="res://assets/libraries/Lib_Terrain.tres" id="1_rwoem"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://duqcippdw1h7s" path="res://game/camera/Camera25D.tscn" id="2_txtxq"]
 [ext_resource type="PackedScene" uid="uid://d2vq5gne71oyg" path="res://game/player/player.tscn" id="4_54c4c"]
 [ext_resource type="Script" path="res://game/levels/turm.gd" id="6_5b8mj"]
+[ext_resource type="PackedScene" uid="uid://bn7kep7dhovkg" path="res://assets/models/player/player.fbx" id="7_0kvqp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ani3p"]
 
@@ -97,7 +98,10 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 4, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Turm"]
-transform = Transform3D(1, 0, 0, 0, 0.295108, 0.955464, 0, -0.955464, 0.295108, -26, 5.83629, 9.02739)
+transform = Transform3D(0.994286, 0.0791909, -0.0715846, 0, 0.670582, 0.741835, 0.10675, -0.737596, 0.66675, -26, 5.83629, 9.02739)
 light_energy = 0.5
 shadow_enabled = true
 shadow_blur = 0.0
+
+[node name="player" type="Node3D" parent="." instance=ExtResource("7_0kvqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48833, 0, 0.683798)
