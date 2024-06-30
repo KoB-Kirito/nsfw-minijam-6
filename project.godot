@@ -74,6 +74,12 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
+[importer_defaults]
+
+scene={
+"import_script/path": "res://resources/scripts/level_import.gd"
+}
+
 [input]
 
 left={
