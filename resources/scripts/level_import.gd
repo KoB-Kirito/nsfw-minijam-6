@@ -9,11 +9,12 @@ func _post_import(scene: Node) -> Node:
 	_scene = scene
 	
 	var file := get_source_file()
+	# Nebenprodukte überspringen
+	if file.ends_with("fbx_Rest.fbx") or file.ends_with("fbx_Collection.fbx"):
+		return null
+	
 	print_rich("Importiere: [b]%s[/b]" % [file])
-	
-	# recursive iteration
 	iterate(scene)
-	
 	return scene
 
 
@@ -62,16 +63,18 @@ func handle_box_collider(node: MeshInstance3D) -> void:
 func map_materials(node: MeshInstance3D) -> void:
 	for i in node.mesh.get_surface_count():
 		var mat = node.mesh.surface_get_material(i)
+		if mat.resource_name.is_empty():
+			continue
 		print_rich("Material: %s" % [mat.resource_name])
+		var res = "res://assets/materials/%s.tres" % [mat.resource_name]
 		
 		# check if file exists
-		FileAccess.file_exists("path")
+		if FileAccess.file_exists(res):
+			var link_mat = ResourceLoader.load(res)
 		
-		# load material from file
-		ResourceLoader.load("path")
-		
-		# apply material
-		#node.mesh.surface_set_material()
+			node.mesh.surface_set_material(i, link_mat)
+		else:
+			print_rich("Material %s nicht im Projekt gefunden." % [mat.resource_name])
 
 
 # Reihenfolge ist wichtig, immer von oben nach unten

@@ -27,6 +27,9 @@ node_connections = [&"output", 0, &"IdleToRun"]
 
 [node name="player" instance=ExtResource("1_67x13")]
 
+[node name="Neko_Rig" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)
+
 [node name="Skeleton3D" parent="Neko_Rig" index="0"]
 bones/1/position = Vector3(2.35872e-06, -0.00089697, 0.00965796)
 bones/1/rotation = Quaternion(0.12812, 0.83142, 0.534364, 0.0823444)
