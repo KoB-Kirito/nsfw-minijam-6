@@ -9,6 +9,7 @@ height = 1.6
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_60hwk")
+camera_look_ahead_distance = 4.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
