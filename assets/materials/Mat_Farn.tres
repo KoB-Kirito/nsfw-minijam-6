@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://b46s42ee4hnvb"]
+
+[ext_resource type="Shader" uid="uid://dsm68rgtxqujf" path="res://assets/shaders/GrasShader.tres" id="1_kjn52"]
+[ext_resource type="Texture2D" uid="uid://cgkhgs4dqekj4" path="res://assets/textures/Farn2.png" id="2_q62vf"]
+[ext_resource type="Texture2D" uid="uid://d223asmqp6yfq" path="res://assets/textures/Farn2_Normals.png" id="3_jrd7m"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kjn52")
+shader_parameter/Albedo = ExtResource("2_q62vf")
+shader_parameter/Normal = ExtResource("3_jrd7m")

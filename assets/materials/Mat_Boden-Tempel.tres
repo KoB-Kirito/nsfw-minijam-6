@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dm8p8q1lkn0f0" path="res://assets/textures/Ground068_2K-PNG_AmbientOcclusion.png" id="2_tg3ku"]
 
 [resource]
-albedo_color = Color(0.762591, 0.757682, 0.779428, 1)
+albedo_color = Color(0.71262, 0.950375, 1, 1)
 albedo_texture = ExtResource("1_qecl7")
 normal_enabled = true
 normal_texture = ExtResource("2_csp47")

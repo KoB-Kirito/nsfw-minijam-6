@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d1it5tbiaxv8a"]
+[gd_scene load_steps=25 format=3 uid="uid://d1it5tbiaxv8a"]
 
 [ext_resource type="Script" path="res://game/levels/testlevel.gd" id="1_5yc4w"]
 [ext_resource type="MeshLibrary" uid="uid://dfv7wbqvrkh0g" path="res://assets/libraries/Lib_Terrain.tres" id="1_rwoem"]
@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://dlk5xpsao35r8" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Block_Kante_L.fbx" id="10_ja2yk"]
 [ext_resource type="PackedScene" uid="uid://b40x2ab71wetu" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Block_Kante_R.fbx" id="11_4ak77"]
 [ext_resource type="PackedScene" uid="uid://c5c138j6bfc32" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Wand_L-2m.fbx" id="12_u8qd3"]
+[ext_resource type="PackedScene" uid="uid://cjakj4jqriooa" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Treppe-Stein.fbx" id="13_f5mj3"]
+[ext_resource type="PackedScene" uid="uid://bqspf0u07pryb" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Gr_nzeug-2m.fbx" id="14_f66fe"]
+[ext_resource type="PackedScene" uid="uid://csnu2ssudamd8" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Felswand-4x4m.fbx" id="15_j2qy1"]
+[ext_resource type="PackedScene" uid="uid://nenykugb2wvv" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Baumbr_cke.fbx" id="16_cpggd"]
 
 [sub_resource type="Gradient" id="Gradient_wnbp0"]
 offsets = PackedFloat32Array(0, 0.292994, 0.506821, 0.513116, 1)
@@ -56,7 +60,7 @@ script = ExtResource("1_5yc4w")
 script = null
 
 [node name="Camera25D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_txtxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 12)
 current = true
 fov = 30.0
 target = NodePath("../Player")
@@ -66,7 +70,7 @@ smoothSpeed = 10.0
 environment = SubResource("Environment_a0wee")
 
 [node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("4_54c4c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.79724, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79724, 1, 0)
 camera = NodePath("../Camera25D")
 camera_look_ahead_distance = 2.0
 
@@ -112,40 +116,82 @@ directional_shadow_split_2 = 0.1
 directional_shadow_max_distance = 70.0
 
 [node name="wolfy" parent="." instance=ExtResource("8_616kr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41908, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41908, 1, 0)
 
-[node name="Plattform-Tiles_fbx_Felsen1" parent="." instance=ExtResource("8_4jbkg")]
+[node name="Plattform-Tiles_fbx_Felsen1" type="Node3D" parent="." instance=ExtResource("8_4jbkg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.254876, 0, 1.09524)
 
-[node name="Plattform-Tiles_fbx_Block_Boden-2m" parent="." instance=ExtResource("9_wooyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-
-[node name="Plattform-Tiles_fbx_Block_Boden-2m" parent="Plattform-Tiles_fbx_Block_Boden-2m" instance=ExtResource("9_wooyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="Plattform-Tiles_fbx_Block_Boden-2m" parent="Plattform-Tiles_fbx_Block_Boden-2m/Plattform-Tiles_fbx_Block_Boden-2m" instance=ExtResource("9_wooyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="Plattform-Tiles_fbx_Block_Kante_L" parent="Plattform-Tiles_fbx_Block_Boden-2m" instance=ExtResource("10_ja2yk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-
-[node name="Plattform-Tiles_fbx_Block_Kante_R" parent="Plattform-Tiles_fbx_Block_Boden-2m" instance=ExtResource("11_4ak77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="Plattform-Tiles_fbx_Block_Kante_L" parent="." instance=ExtResource("10_ja2yk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="Plattform-Tiles_fbx_Wand_L-2m" parent="." instance=ExtResource("12_u8qd3")]
+[node name="Plattform-Tiles_fbx_Wand_L-2m" type="Node3D" parent="." instance=ExtResource("12_u8qd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.55983, -1, 0)
 
-[node name="Plattform-Tiles_fbx_Wand_L-2m2" parent="." instance=ExtResource("12_u8qd3")]
+[node name="Plattform-Tiles_fbx_Wand_L-2m2" type="Node3D" parent="." instance=ExtResource("12_u8qd3")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.20112, -1, 0)
 
-[node name="Plattform-Tiles_fbx_Block_Boden-2m2" parent="." instance=ExtResource("9_wooyp")]
+[node name="Plattform-Tiles_fbx_Block_Boden-2m2" type="Node3D" parent="." instance=ExtResource("9_wooyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 0)
 
-[node name="Plattform-Tiles_fbx_Block_Boden-2m3" parent="." instance=ExtResource("9_wooyp")]
+[node name="Plattform-Tiles_fbx_Treppe-Stein" type="Node3D" parent="." instance=ExtResource("13_f5mj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Felsen2" type="Node3D" parent="." instance=ExtResource("8_4jbkg")]
+transform = Transform3D(0.990655, 0, 0.13639, 0, 1, 0, -0.13639, 0, 0.990655, 3.53814, 0.000999808, 1.20342)
+
+[node name="Plattform-Tiles_fbx_Gr_nzeug-2m" type="Node3D" parent="." instance=ExtResource("14_f66fe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0.0784659)
+
+[node name="Plattform-Tiles_fbx_Felsen3" type="Node3D" parent="." instance=ExtResource("8_4jbkg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98272, 0.704786, -1.37484)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m6" type="Node3D" parent="." instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m7" type="Node3D" parent="." instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m8" type="Node3D" parent="." instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m9" type="Node3D" parent="." instance=ExtResource("9_wooyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 0)
 
-[node name="Plattform-Tiles_fbx_Block_Kante_L2" parent="." instance=ExtResource("10_ja2yk")]
+[node name="Plattform-Tiles_fbx_Felswand-4x4m6" type="Node3D" parent="." instance=ExtResource("15_j2qy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -4, 1)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m7" type="Node3D" parent="." instance=ExtResource("15_j2qy1")]
+transform = Transform3D(1.07, 0, 0, 0, 1.07, 0, 0, 0, 1.07, 0, -4, 1)
+
+[node name="Plattform-Tiles_fbx_Block_Kante_L" type="Node3D" parent="." instance=ExtResource("10_ja2yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Kante_R" type="Node3D" parent="." instance=ExtResource("11_4ak77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Kante_L2" type="Node3D" parent="." instance=ExtResource("10_ja2yk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Kante_L3" type="Node3D" parent="." instance=ExtResource("10_ja2yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m" type="Node3D" parent="." instance=ExtResource("15_j2qy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m2" type="Node3D" parent="." instance=ExtResource("15_j2qy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -3)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m5" parent="." instance=ExtResource("15_j2qy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -2.708)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m3" type="Node3D" parent="." instance=ExtResource("15_j2qy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -3)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m4" type="Node3D" parent="." instance=ExtResource("15_j2qy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -3, -2)
+
+[node name="Plattform-Tiles_fbx_Gr_nzeug-2m2" type="Node3D" parent="." instance=ExtResource("14_f66fe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0.297878)
+
+[node name="Plattform-Tiles_fbx_Gr_nzeug-2m3" type="Node3D" parent="." instance=ExtResource("14_f66fe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29618, -1, 0.201664)
+
+[node name="Plattform-Tiles_fbx_Baumbr_cke" type="Node3D" parent="." instance=ExtResource("16_cpggd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -0.211585, 0)

@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://crngbn5wno486"]
+
+[ext_resource type="Shader" uid="uid://ibvnnjqita6d" path="res://assets/shaders/MoosStein.tres" id="1_k7m8m"]
+[ext_resource type="Texture2D" uid="uid://dvmijjuispekr" path="res://assets/textures/Rock050_2K-PNG_Color.png" id="2_gk3ew"]
+[ext_resource type="Texture2D" uid="uid://d010pllm2q827" path="res://assets/textures/Rock050_2K-PNG_AmbientOcclusion.png" id="3_fnbdk"]
+[ext_resource type="Texture2D" uid="uid://critg3ceuw4so" path="res://assets/textures/Rock050_2K-PNG_NormalGL.png" id="4_34sw5"]
+[ext_resource type="Texture2D" uid="uid://cjeqx558bxbf6" path="res://assets/textures/Rock053_2K-PNG_Color.png" id="5_vbk84"]
+[ext_resource type="Texture2D" uid="uid://bj78rcmbu7rmm" path="res://assets/textures/Rock053_2K-PNG_AmbientOcclusion.png" id="6_p4vn7"]
+[ext_resource type="Texture2D" uid="uid://c86jxvcykclne" path="res://assets/textures/Rock053_2K-PNG_NormalGL.png" id="7_44p3c"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_k7m8m")
+shader_parameter/TopAngle = 0.5
+shader_parameter/Blend = 0.0
+shader_parameter/Tint = Color(0.35, 0.35, 0.35, 1)
+shader_parameter/Albedo = ExtResource("2_gk3ew")
+shader_parameter/AmbientOcc = ExtResource("3_fnbdk")
+shader_parameter/Top_Albedo = ExtResource("5_vbk84")
+shader_parameter/Top_AmbientOcc = ExtResource("6_p4vn7")
+shader_parameter/Normal = ExtResource("4_34sw5")
+shader_parameter/Top_Normals = ExtResource("7_44p3c")
