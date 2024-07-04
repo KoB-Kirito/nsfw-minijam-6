@@ -1,9 +1,9 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://ck4hckbcq53km"]
 
 [ext_resource type="Shader" uid="uid://dfvh85h8hm8dx" path="res://assets/shaders/MRO_Transparent.tres" id="1_12ndj"]
-[ext_resource type="Texture2D" path="res://assets/textures/Slime_1024_albedo.png" id="2_itlks"]
-[ext_resource type="Texture2D" path="res://assets/textures/Slime_1024_MRO.png" id="3_mt0u6"]
-[ext_resource type="Texture2D" path="res://assets/textures/Slime_1024_normal.png" id="4_dfnj1"]
+[ext_resource type="Texture2D" uid="uid://deuvaj8pbk7td" path="res://assets/textures/Slime_1024_albedo.png" id="2_itlks"]
+[ext_resource type="Texture2D" uid="uid://dsgbj64foiap5" path="res://assets/textures/Slime_1024_MRO.png" id="3_mt0u6"]
+[ext_resource type="Texture2D" uid="uid://bibnd7o2eusw7" path="res://assets/textures/Slime_1024_normal.png" id="4_dfnj1"]
 
 [resource]
 render_priority = 0

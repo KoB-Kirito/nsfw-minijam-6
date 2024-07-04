@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dthsv0skle7mm"]
 
 [ext_resource type="Shader" uid="uid://k7vkytq5dd7g" path="res://assets/shaders/Wasserfall.tres" id="1_bkqf7"]
-[ext_resource type="Texture2D" path="res://assets/textures/Wasserfall_Verlauf.png" id="2_e50nt"]
+[ext_resource type="Texture2D" uid="uid://dqootnkqupjhv" path="res://assets/textures/Wasserfall_Verlauf.png" id="2_e50nt"]
 
 [resource]
 render_priority = 0

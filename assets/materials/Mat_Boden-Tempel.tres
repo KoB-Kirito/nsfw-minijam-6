@@ -10,5 +10,6 @@ albedo_texture = ExtResource("1_qecl7")
 normal_enabled = true
 normal_texture = ExtResource("2_csp47")
 anisotropy_enabled = true
+anisotropy = 1.0
 ao_enabled = true
 ao_texture = ExtResource("2_tg3ku")
