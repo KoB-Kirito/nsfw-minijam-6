@@ -273,8 +273,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
 [node name="Plattform-Tiles_fbx_BG_Ebene" type="Node3D" parent="." instance=ExtResource("17_fs8fa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -8, -6)
 
-[node name="Plattform-Tiles_fbx_BG_Lagune" parent="." instance=ExtResource("19_dslgs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, -9, -6)
-
-[node name="Plattform-Tiles_fbx_BG_Plateau" parent="." instance=ExtResource("21_aw2g7")]
+[node name="Plattform-Tiles_fbx_BG_Plateau" type="Node3D" parent="." instance=ExtResource("21_aw2g7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142, -9, -6)
+
+[node name="Plattform-Tiles_fbx_BG_Lagune" parent="." instance=ExtResource("19_dslgs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, -8, -6)

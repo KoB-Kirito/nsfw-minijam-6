@@ -1,15 +1,14 @@
-[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://0e56wds84fhi"]
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://ck4hckbcq53km"]
 
 [ext_resource type="Shader" uid="uid://dfvh85h8hm8dx" path="res://assets/shaders/MRO_Transparent.tres" id="1_12ndj"]
-[ext_resource type="Texture2D" uid="uid://deuvaj8pbk7td" path="res://assets/textures/Slime_1024_albedo.png" id="2_itlks"]
-[ext_resource type="Texture2D" uid="uid://dsgbj64foiap5" path="res://assets/textures/Slime_1024_MRO.png" id="3_mt0u6"]
-[ext_resource type="Texture2D" uid="uid://bibnd7o2eusw7" path="res://assets/textures/Slime_1024_normal.png" id="4_dfnj1"]
+[ext_resource type="Texture2D" path="res://assets/textures/Slime_1024_albedo.png" id="2_itlks"]
+[ext_resource type="Texture2D" path="res://assets/textures/Slime_1024_MRO.png" id="3_mt0u6"]
+[ext_resource type="Texture2D" path="res://assets/textures/Slime_1024_normal.png" id="4_dfnj1"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_12ndj")
 shader_parameter/FresnelPower = 0.75
-shader_parameter/MinAlpha = 0.3
 shader_parameter/Glossy = 1.0
 shader_parameter/Albedo = ExtResource("2_itlks")
 shader_parameter/MRO = ExtResource("3_mt0u6")
