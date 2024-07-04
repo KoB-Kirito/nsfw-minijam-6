@@ -7,5 +7,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_kjn52")
+shader_parameter/Speed = 0.015
+shader_parameter/Wind = 0.6
 shader_parameter/Albedo = ExtResource("2_q62vf")
 shader_parameter/Normal = ExtResource("3_jrd7m")

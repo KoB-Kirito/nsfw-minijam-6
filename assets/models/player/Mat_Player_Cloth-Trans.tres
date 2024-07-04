@@ -8,6 +8,8 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_cey6a")
+shader_parameter/FresnelPower = 0.5
+shader_parameter/MinAlpha = 0.25
 shader_parameter/Glossy = 1.0
 shader_parameter/Albedo = ExtResource("2_pp4fk")
 shader_parameter/MRO = ExtResource("3_ymfq5")

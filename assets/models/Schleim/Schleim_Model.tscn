@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://div3l7ce32x3c"]
+
+[ext_resource type="PackedScene" uid="uid://c5syvvafrxthk" path="res://assets/models/Schleim/Schleim.fbx" id="1_rtvtk"]
+
+[node name="Schleim" instance=ExtResource("1_rtvtk")]
+
+[node name="Schleim" parent="." index="0"]
+transform = Transform3D(0.75, 0, 0, 0, -3.27835e-08, 0.75, 0, -0.75, -3.27835e-08, 0, 0.75, 0)
+blend_shapes/Stand = 1.0
