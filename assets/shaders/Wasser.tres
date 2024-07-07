@@ -278,7 +278,6 @@ void fragment() {
 	vec4 n_out18p0;
 // Texture2D:18
 	n_out18p0 = texture(Schaum, n_out39p0);
-	float n_out18p1 = n_out18p0.r;
 
 
 // ColorConstant:29
@@ -477,7 +476,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-1192.3, -101.148)
 nodes/fragment/18/node = SubResource("VisualShaderNodeTexture_qb22b")
 nodes/fragment/18/position = Vector2(-3160, 1080)
 nodes/fragment/28/node = SubResource("VisualShaderNodeTexture2DParameter_3dtcc")

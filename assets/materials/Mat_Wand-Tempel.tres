@@ -11,6 +11,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_80ne0")
+shader_parameter/Speed = null
 shader_parameter/TopAngle = 0.5
 shader_parameter/Blend = 0.1
 shader_parameter/Tint = Color(0.587751, 0.587751, 0.58775, 1)

@@ -105,7 +105,6 @@ void fragment() {
 // Texture2D:2
 	n_out2p0 = texture(Struktur, n_out9p0);
 	float n_out2p1 = n_out2p0.r;
-	float n_out2p4 = n_out2p0.a;
 
 
 // FloatOp:25
@@ -119,7 +118,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-1082, -93.4974)
 nodes/fragment/0/position = Vector2(160, 360)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_o2img")
 nodes/fragment/2/position = Vector2(-1720, 340)
