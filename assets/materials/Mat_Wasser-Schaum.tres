@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dlr3n40gy6cra"]
+
+[ext_resource type="Shader" uid="uid://buduubm5qnrjn" path="res://assets/shaders/Stromschnellen.tres" id="1_4bed1"]
+[ext_resource type="Texture2D" uid="uid://d1ijk76nv80w4" path="res://assets/textures/Rauer_Fleck.png" id="2_gwi4y"]
+[ext_resource type="Texture2D" uid="uid://4s727nxxw8oj" path="res://assets/textures/Raue-Flecken.png" id="3_wvoay"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_4bed1")
+shader_parameter/Color = Color(1, 1, 1, 1)
+shader_parameter/Speed = 1.2
+shader_parameter/Bereich = ExtResource("2_gwi4y")
+shader_parameter/Struktur = ExtResource("3_wvoay")

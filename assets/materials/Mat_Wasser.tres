@@ -1,11 +1,13 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b0fkmxhcyr6gv"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ds45givxwkjrv"]
 
+[ext_resource type="Shader" uid="uid://djyldljo6o171" path="res://assets/shaders/Wasser.tres" id="1_8g4lq"]
 [ext_resource type="Texture2D" uid="uid://cqk3cjtnyf0xb" path="res://assets/textures/Water_001_DISP_NORM.png" id="1_ed0hj"]
 
 [resource]
-transparency = 1
-albedo_color = Color(0.3999, 0.43, 0.424983, 1)
-roughness = 0.0
-normal_enabled = true
-normal_texture = ExtResource("1_ed0hj")
-uv1_scale = Vector3(3, 3, 3)
+render_priority = 0
+shader = ExtResource("1_8g4lq")
+shader_parameter/Scale = Vector2(8, 8)
+shader_parameter/Speed_Schaum = Vector2(0, 0)
+shader_parameter/Speed_Wellen1 = Vector2(0.1, -0.2)
+shader_parameter/Speed_Wellen2 = Vector2(-0.1, -0.2)
+shader_parameter/Wellen = ExtResource("1_ed0hj")

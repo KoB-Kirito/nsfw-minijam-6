@@ -1,9 +1,13 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dthsv0skle7mm"]
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dthsv0skle7mm"]
 
 [ext_resource type="Shader" uid="uid://k7vkytq5dd7g" path="res://assets/shaders/Wasserfall.tres" id="1_bkqf7"]
-[ext_resource type="Texture2D" uid="uid://dqootnkqupjhv" path="res://assets/textures/Wasserfall_Verlauf.png" id="2_e50nt"]
+[ext_resource type="Texture2D" uid="uid://4s727nxxw8oj" path="res://assets/textures/Raue-Flecken.png" id="3_8pldr"]
+[ext_resource type="Texture2D" uid="uid://cr4kjwtvi0qq7" path="res://assets/textures/Raue-Säule_v2.png" id="4_f6sp7"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_bkqf7")
-shader_parameter/Albedo = ExtResource("2_e50nt")
+shader_parameter/Speed = 0.7
+shader_parameter/Struktur = ExtResource("3_8pldr")
+shader_parameter/Bereich = ExtResource("4_f6sp7")
+shader_parameter/Bereich2 = ExtResource("4_f6sp7")

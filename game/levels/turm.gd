@@ -12,14 +12,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var endX = startX + radius * 2 * maxAngle / 360
+	var endX = startX + (radius * PI * maxAngle / 180)
 	if (player.global_position.x <= startX):
 		global_position.x = startX
 		global_rotation.y = 0
 		return
 	if (player.global_position.x >= endX):
 		global_position.x = endX
-		global_rotation_degrees.y = maxAngle
+		global_rotation_degrees.y = -maxAngle
 		return
 	global_position.x = player.global_position.x
-	global_rotation.y = (player.global_position.x - startX) / radius * -PI
+	global_rotation_degrees.y = (player.global_position.x - startX) / (endX - startX) * -maxAngle

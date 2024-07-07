@@ -36,15 +36,20 @@ extends CharacterBody3D
 ## How far the camera moves in the input_x the player moves in m
 @export_range(0.0, 16.0, 0.5) var camera_look_ahead_distance: float = 8.0
 @export_range(0.0, 16.0, 0.5) var camera_look_ahead_speed: float = 2.0
+@export var cam_follows_player: bool = true
 
 
 var last_direction: Vector3 = Vector3.RIGHT
 var camera_current_distance: float = 0
+var cameraTarget: Node3D
 
 @onready var camera_offset: Vector3 = abs(global_position - camera.global_position)
 
 #HACK
 @onready var animation_tree: AnimationTree = find_child("AnimationTree")
+
+func _init() -> void:
+	cameraTarget = find_child("CameraTarget")
 
 
 func _physics_process(delta):
@@ -129,3 +134,16 @@ func _physics_process(delta):
 	# camera
 	camera_current_distance = lerp(camera_current_distance, last_direction.x * camera_look_ahead_distance, camera_look_ahead_speed * delta)
 	%CameraTarget.global_position = global_position + Vector3.RIGHT * camera_current_distance
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	var pos: Node3D = area.find_child("Pos")
+	print("Kamerabereich: %s" % [pos])
+	cameraTarget.global_position = pos.global_position
+	#cameraTarget.global_rotation = pos.global_rotation
+	cam_follows_player = false
+
+
+func _on_area_3d_area_exited(area: Area3D) -> void:
+	cameraTarget.global_position = global_position
+	cam_follows_player = true
