@@ -1,13 +1,20 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ds45givxwkjrv"]
 
-[ext_resource type="Shader" uid="uid://djyldljo6o171" path="res://assets/shaders/Wasser.tres" id="1_8g4lq"]
 [ext_resource type="Texture2D" uid="uid://cqk3cjtnyf0xb" path="res://assets/textures/Water_001_DISP_NORM.png" id="1_ed0hj"]
+[ext_resource type="Shader" path="res://assets/shaders/WaterShader2.gdshader" id="1_fbpxs"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_8g4lq")
-shader_parameter/Scale = Vector2(8, 8)
-shader_parameter/Speed_Schaum = Vector2(0, 0)
-shader_parameter/Speed_Wellen1 = Vector2(0.1, -0.2)
-shader_parameter/Speed_Wellen2 = Vector2(-0.1, -0.2)
-shader_parameter/Wellen = ExtResource("1_ed0hj")
+shader = ExtResource("1_fbpxs")
+shader_parameter/albedo = Color(0.121189, 0.183741, 0.30427, 1)
+shader_parameter/albedo2 = Color(0.58355, 0.673873, 0.827852, 1)
+shader_parameter/wave_direction = Vector2(-1, -1)
+shader_parameter/wave_direction2 = Vector2(1, -1)
+shader_parameter/wave_scale = Vector2(4, 4)
+shader_parameter/time_scale = 0.1
+shader_parameter/refraction_strength = 0.5
+shader_parameter/color_deep = Color(0.186982, 0.299219, 0.574507, 1)
+shader_parameter/color_shallow = Color(0.7055, 0.797017, 0.85, 1)
+shader_parameter/depth_scale = 0.3
+shader_parameter/depth_offset = -0.5
+shader_parameter/normalmap = ExtResource("1_ed0hj")
