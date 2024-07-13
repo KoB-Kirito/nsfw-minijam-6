@@ -11,7 +11,7 @@ func _post_import(scene: Node) -> Node:
 	var file := get_source_file()
 	# Nebenprodukte überspringen
 	if file.ends_with("fbx_Rest.fbx") or file.ends_with("fbx_Collection.fbx"):
-		return null
+		return scene
 	
 	print_rich("Importiere: [b]%s[/b]" % [file])
 	iterate(scene)
