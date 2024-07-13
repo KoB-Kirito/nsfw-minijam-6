@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bn7kep7dhovkg" path="res://assets/models/player/player.fbx" id="1_67x13"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b0ipx"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fg582"]
 animation = &"Laufen"
 use_custom_timeline = true
 timeline_length = 0.5
@@ -10,17 +10,18 @@ stretch_time_scale = true
 start_offset = 0.0
 loop_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kc3bd"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nre4e"]
 animation = &"Idle"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_6gwbh"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_b0ipx")
+blend_point_0/node = SubResource("AnimationNodeAnimation_fg582")
 blend_point_0/pos = 1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_kc3bd")
+blend_point_1/node = SubResource("AnimationNodeAnimation_nre4e")
 blend_point_1/pos = 0.0
 min_space = 0.0
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_502ad"]
+graph_offset = Vector2(-440.493, 17.3757)
 nodes/IdleToRun/node = SubResource("AnimationNodeBlendSpace1D_6gwbh")
 nodes/IdleToRun/position = Vector2(40, 146.667)
 node_connections = [&"output", 0, &"IdleToRun"]
@@ -28,7 +29,7 @@ node_connections = [&"output", 0, &"IdleToRun"]
 [node name="player" instance=ExtResource("1_67x13")]
 
 [node name="Neko_Rig" parent="." index="0"]
-transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 1.5)
 
 [node name="Skeleton3D" parent="Neko_Rig" index="0"]
 bones/1/position = Vector3(2.35872e-06, -0.00089697, 0.00965796)

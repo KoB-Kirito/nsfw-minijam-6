@@ -72,9 +72,8 @@ height = 3.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_a0wee")
 
-[node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("4_54c4c")]
+[node name="Player" parent="." instance=ExtResource("4_54c4c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.6105, -4, 0.0932207)
-camera = NodePath("../Camera25D")
 camera_look_ahead_distance = 2.0
 
 [node name="Turm" type="Node3D" parent="." node_paths=PackedStringArray("player")]
