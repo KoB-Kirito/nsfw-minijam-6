@@ -8,7 +8,8 @@ var cameraTarget: Node3D
 
 func _ready():
 	# find camera target within target node
-	cameraTarget = target.find_child("CameraTarget")
+	cameraTarget = target
+	#cameraTarget = target.find_child("CameraTarget")
 
 
 func _physics_process(delta) -> void:

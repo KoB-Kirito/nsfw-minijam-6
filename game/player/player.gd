@@ -1,8 +1,6 @@
+class_name Player
 extends CharacterBody3D
 
-
-## Set camera that should be moved by the player script
-@export var camera: Camera3D
 
 @export_group("Movement")
 ## Maximum speed in m/s
@@ -40,110 +38,8 @@ extends CharacterBody3D
 
 
 var last_direction: Vector3 = Vector3.RIGHT
-var camera_current_distance: float = 0
-var cameraTarget: Node3D
-
-@onready var camera_offset: Vector3 = abs(global_position - camera.global_position)
-
-#HACK
-@onready var animation_tree: AnimationTree = find_child("AnimationTree")
-
-func _init() -> void:
-	cameraTarget = find_child("CameraTarget")
 
 
-func _physics_process(delta):
-	# apply gravity
-	if not is_on_floor():
-		if Input.is_action_pressed("jump"):
-			if velocity.y < 0:
-				# falling
-				velocity += get_gravity() * gravity_multiplyer_fall_jumping * delta
-				
-			else:
-				# rising
-				velocity += get_gravity() * gravity_multiplyer_rise_jumping * delta
-			
-		else:
-			if velocity.y < 0:
-				# falling
-				velocity += get_gravity() * gravity_multiplyer_fall * delta
-				
-			else:
-				# rising
-				velocity += get_gravity() * gravity_multiplyer_rise * delta
-		
-		# cap falling speed
-		if velocity.y < get_gravity().y * maximum_falling_speed_multiplyer:
-			velocity.y = get_gravity().y * maximum_falling_speed_multiplyer
-	
-	
-	# handle jump
-	if Input.is_action_just_pressed("jump"):# and is_on_floor(): #TEST
-		velocity.y = jump_velocity
-	
-	
-	# handle movement
-	var input_x := Input.get_axis("left", "right")
-	if input_x > 0:
-		# right
-		if velocity.x < 0:
-			# de-accelerating toward 0
-			velocity.x = move_toward(velocity.x, maximum_speed, de_acceleration * friction * delta)
-			
-		else:
-			# accelerating
-			velocity.x = move_toward(velocity.x, maximum_speed, acceleration * friction * delta)
-		
-	elif input_x < 0:
-		# left
-		if velocity.x > 0:
-			# de-accelerating toward 0
-			velocity.x = move_toward(velocity.x, -maximum_speed, de_acceleration * friction * delta)
-			
-		else:
-			# accelerating
-			velocity.x = move_toward(velocity.x, -maximum_speed, acceleration * friction * delta)
-		
-	else:
-		# stop
-		velocity.x = move_toward(velocity.x, 0, de_acceleration * friction * delta)
-	
-	move_and_slide()
-	
-	
-	# animation
-	if is_on_floor():
-		# set animation blend based on speed
-		animation_tree.set("parameters/IdleToRun/blend_position", get_real_velocity().length() / maximum_speed)
-		
-	else:
-		#TODO: falling???
-		animation_tree.set("parameters/IdleToRun/blend_position", 0)
-	
-	# rotate player to face movement direction
-	if input_x < -0.01:
-		last_direction = Vector3.LEFT
-		
-	elif input_x > 0.01:
-		last_direction = Vector3.RIGHT
-	
-	%Model.rotation.y = lerp_angle(%Model.rotation.y, atan2(last_direction.x, last_direction.z), rotation_speed * delta)
-	
-	
-	# camera
-	camera_current_distance = lerp(camera_current_distance, last_direction.x * camera_look_ahead_distance, camera_look_ahead_speed * delta)
-	%CameraTarget.global_position = global_position + Vector3.RIGHT * camera_current_distance
-
-
-func _on_area_3d_area_entered(area: Area3D) -> void:
-	var pos: Node3D = area.find_child("Pos")
-	print("Kamerabereich: %s" % [pos])
-	cameraTarget.global_position = pos.global_position
-	#cameraTarget.global_rotation = pos.global_rotation
-	cam_follows_player = false
-
-
-func _on_area_3d_area_exited(area: Area3D) -> void:
-	cameraTarget.global_position = global_position
-	cam_follows_player = true
+# Debug
+func _on_state_machine_3d_state_changed(object: Node, old_state: State3D, new_state: State3D) -> void:
+	print("Player changed state from ", old_state.name if old_state else "null", " to ", new_state.name)
