@@ -6,13 +6,13 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_fbpxs")
-shader_parameter/albedo = Color(0.121189, 0.183741, 0.30427, 1)
+shader_parameter/albedo = Color(0, 0, 0, 1)
 shader_parameter/albedo2 = Color(0.58355, 0.673873, 0.827852, 1)
-shader_parameter/wave_direction = Vector2(-1, -1)
+shader_parameter/wave_direction = Vector2(-1, -1.2)
 shader_parameter/wave_direction2 = Vector2(1, -1)
 shader_parameter/wave_scale = Vector2(4, 4)
 shader_parameter/time_scale = 0.1
-shader_parameter/refraction_strength = 0.5
+shader_parameter/refraction_strength = 0.1
 shader_parameter/color_deep = Color(0.186982, 0.299219, 0.574507, 1)
 shader_parameter/color_shallow = Color(0.7055, 0.797017, 0.85, 1)
 shader_parameter/depth_scale = 0.3

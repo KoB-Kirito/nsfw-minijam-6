@@ -1,4 +1,5 @@
 shader_type spatial;
+render_mode depth_draw_never, cull_back;
 
 uniform vec3 albedo : source_color;
 uniform vec3 albedo2 : source_color;
@@ -54,11 +55,6 @@ void fragment()
 	depth_blend = clamp(1.0 - depth_blend, 0.0, 1.0);
 	float depth_blend_power = clamp(pow(depth_blend, 2.5), 0.0, 1.0);
 
-	// Retrieving depth color and applying the deep and shallow colors
-	vec3 screen_color = textureLod(SCREEN_TEXTURE, SCREEN_UV, depth_blend_power * 2.5).rgb;
-	vec3 depth_color = mix(color_shallow.rgb, color_deep.rgb, depth_blend_power);
-	vec3 color = mix(screen_color * depth_color, depth_color * 0.25, depth_blend_power * 0.5);
-
 	vec2 time = (TIME * wave_direction) * time_scale;
 	vec2 time2 = (TIME * wave_direction2) * time_scale;
 
@@ -67,13 +63,17 @@ void fragment()
 	vec3 norm2 = fragNormal(unpackNormal(texture(normalmap,UV * wave_scale + time2).rgb), NORMAL, TANGENT, BINORMAL);
 	vec3 normal_blend = norm1 + norm2;
 
+	// Retrieving depth color and applying the deep and shallow colors
+	vec3 screen_color = textureLod(SCREEN_TEXTURE, SCREEN_UV + normal_blend.xy * refraction_strength, depth_blend_power * 2.5).rgb;
+	vec3 depth_color = mix(color_shallow.rgb, color_deep.rgb, depth_blend_power);
+	vec3 color = mix(screen_color * depth_color, depth_color * 0.25, depth_blend_power * 0.5);
+
 	// Calculate Fresnel
 	float fresnel = fresnel(4.0, NORMAL, VIEW);
 	vec3 surface_color = mix(albedo, albedo2, fresnel); // Interpolate albedo values by frensel
 
 	NORMAL = normal_blend;
-	ALPHA = .9;
 	ALBEDO = clamp(surface_color + color,vec3(0.0),vec3(1.0));
-	ROUGHNESS = 0.001;
+	ROUGHNESS = 0.00;
 	METALLIC = 0.;
 }
