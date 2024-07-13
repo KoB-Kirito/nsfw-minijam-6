@@ -1,0 +1,98 @@
+[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://cp711nyfgc4f7"]
+
+[ext_resource type="Texture2D" uid="uid://bq21msp2v0ayc" path="res://assets/textures/DaySkyHDRI043B_4K-TONEMAPPED2.jpg" id="1_w0lx2"]
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_6wdq6"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
+op_type = 3
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_aj4ll"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 2, 1)]
+operator = 2
+
+[sub_resource type="VisualShaderNodeSmoothStep" id="VisualShaderNodeSmoothStep_0rjb4"]
+default_input_values = [0, 0.45, 1, 0.5, 2, 0.5]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_k5lvl"]
+texture = ExtResource("1_w0lx2")
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_g2t6b"]
+input_name = "sky_coords"
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_vq22f"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_kj4tb"]
+parameter_name = "Ground"
+default_value_enabled = true
+default_value = Color(0.301961, 0.384314, 0.501961, 1)
+
+[resource]
+code = "shader_type sky;
+uniform sampler2D tex_sky_2;
+uniform vec4 Ground : source_color = vec4(0.301961, 0.384314, 0.501961, 1.000000);
+
+
+
+void sky() {
+// Input:4
+	vec2 n_out4p0 = SKY_COORDS;
+
+
+// VectorOp:11
+	vec3 n_in11p1 = vec3(1.00000, 2.00000, 1.00000);
+	vec3 n_out11p0 = vec3(n_out4p0, 0.0) * n_in11p1;
+
+
+// Texture2D:2
+	vec4 n_out2p0 = texture(tex_sky_2, vec2(n_out11p0.xy));
+
+
+// ColorParameter:9
+	vec4 n_out9p0 = Ground;
+
+
+// VectorDecompose:6
+	float n_out6p0 = vec3(n_out4p0, 0.0).x;
+	float n_out6p1 = vec3(n_out4p0, 0.0).y;
+	float n_out6p2 = vec3(n_out4p0, 0.0).z;
+
+
+// SmoothStep:12
+	float n_in12p0 = 0.45000;
+	float n_in12p1 = 0.50000;
+	float n_out12p0 = smoothstep(n_in12p0, n_in12p1, n_out6p1);
+
+
+// Mix:10
+	vec3 n_out10p0 = mix(vec3(n_out2p0.xyz), vec3(n_out9p0.xyz), vec3(n_out12p0));
+
+
+// Output:0
+	COLOR = n_out10p0;
+	FOG.rgb = vec3(n_out9p0.xyz);
+
+
+}
+"
+graph_offset = Vector2(-1150.07, 1.54173)
+mode = 3
+flags/use_half_res_pass = false
+flags/use_quarter_res_pass = false
+flags/disable_fog = false
+flags/use_debanding = false
+nodes/sky/0/position = Vector2(500, 120)
+nodes/sky/2/node = SubResource("VisualShaderNodeTexture_k5lvl")
+nodes/sky/2/position = Vector2(-940, -60)
+nodes/sky/4/node = SubResource("VisualShaderNodeInput_g2t6b")
+nodes/sky/4/position = Vector2(-2340, 240)
+nodes/sky/6/node = SubResource("VisualShaderNodeVectorDecompose_vq22f")
+nodes/sky/6/position = Vector2(-1720, 360)
+nodes/sky/9/node = SubResource("VisualShaderNodeColorParameter_kj4tb")
+nodes/sky/9/position = Vector2(-900, 560)
+nodes/sky/10/node = SubResource("VisualShaderNodeMix_6wdq6")
+nodes/sky/10/position = Vector2(-260, 100)
+nodes/sky/11/node = SubResource("VisualShaderNodeVectorOp_aj4ll")
+nodes/sky/11/position = Vector2(-1720, 40)
+nodes/sky/12/node = SubResource("VisualShaderNodeSmoothStep_0rjb4")
+nodes/sky/12/position = Vector2(-1300, 320)
+nodes/sky/connections = PackedInt32Array(4, 0, 6, 0, 2, 0, 10, 0, 9, 0, 10, 1, 10, 0, 0, 0, 9, 0, 0, 2, 4, 0, 11, 0, 11, 0, 2, 0, 6, 1, 12, 2, 12, 0, 10, 2)

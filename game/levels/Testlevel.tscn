@@ -1,9 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://d1it5tbiaxv8a"]
+[gd_scene load_steps=37 format=3 uid="uid://d1it5tbiaxv8a"]
 
 [ext_resource type="Script" path="res://game/levels/testlevel.gd" id="1_5yc4w"]
 [ext_resource type="PackedScene" uid="uid://djan5tyrabooq" path="res://game/levels/cutscene_intro.tscn" id="2_65dhm"]
 [ext_resource type="PackedScene" uid="uid://duqcippdw1h7s" path="res://game/camera/Camera25D.tscn" id="2_txtxq"]
 [ext_resource type="PackedScene" uid="uid://d2vq5gne71oyg" path="res://game/player/player.tscn" id="4_54c4c"]
+[ext_resource type="Material" uid="uid://cnnabn6ihvon4" path="res://assets/materials/Mat_Sky.tres" id="4_ojvks"]
 [ext_resource type="Script" path="res://game/levels/turm.gd" id="6_5b8mj"]
 [ext_resource type="PackedScene" uid="uid://dpurm8uuq3r2p" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Anker_Bergweg-6m.fbx" id="6_ij08w"]
 [ext_resource type="PackedScene" uid="uid://dr1dykfqrd8al" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Felsen1.fbx" id="8_4jbkg"]
@@ -31,19 +32,8 @@
 [ext_resource type="PackedScene" uid="uid://p8055gwj2lfm" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Block_Wasserfall.fbx" id="28_qp4fa"]
 [ext_resource type="PackedScene" uid="uid://t1rhn4mlxg63" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Back_Flusslauf.fbx" id="30_aejpa"]
 
-[sub_resource type="Gradient" id="Gradient_wnbp0"]
-offsets = PackedFloat32Array(0, 0.292994, 0.506821, 0.513116, 1)
-colors = PackedColorArray(0, 0.460471, 0.765065, 1, 0.266894, 0.730792, 1, 1, 0.531977, 0.816427, 1, 1, 3.73013e-07, 0.39247, 0.132134, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tsqxj"]
-gradient = SubResource("Gradient_wnbp0")
-fill_to = Vector2(0, 1)
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vedx8"]
-panorama = SubResource("GradientTexture2D_tsqxj")
-
 [sub_resource type="Sky" id="Sky_a0usx"]
-sky_material = SubResource("PanoramaSkyMaterial_vedx8")
+sky_material = ExtResource("4_ojvks")
 
 [sub_resource type="Environment" id="Environment_a0wee"]
 background_mode = 2
@@ -53,7 +43,7 @@ ambient_light_color = Color(0.331538, 0.437518, 0.472877, 1)
 ambient_light_sky_contribution = 0.0
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.3, 0.383333, 0.5, 1)
+fog_light_color = Color(0.36, 0.46, 0.6, 1)
 fog_density = 1.0
 fog_depth_end = 200.0
 
