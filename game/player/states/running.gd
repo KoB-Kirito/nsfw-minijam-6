@@ -7,6 +7,10 @@ extends State3D
 
 
 func _physics_process(delta: float) -> void:
+	if not _owner.is_on_floor():
+		change_state(%Falling)
+		return
+	
 	if Input.is_action_just_pressed("jump"):
 		change_state(%Jumping)
 		return
