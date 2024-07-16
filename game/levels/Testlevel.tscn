@@ -105,7 +105,7 @@ directional_shadow_split_2 = 0.1
 directional_shadow_max_distance = 70.0
 
 [node name="Plattform-Tiles_fbx_BG_Schlucht2" parent="Turm" instance=ExtResource("17_t5ncq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -7, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -8, 6)
 
 [node name="Plattform-Tiles_fbx_Felsen1" parent="Turm" instance=ExtResource("8_4jbkg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2549, 1, 13.0952)
@@ -263,7 +263,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.6519, -3, 12)
 transform = Transform3D(0.253408, -0.497678, 0.829518, 0.255305, -0.792697, -0.55358, 0.933062, 0.352061, -0.0738158, -20.3553, 7.75448, 8.94783)
 
 [node name="Plattform-Tiles_fbx_BG_Ebene" parent="Turm" instance=ExtResource("17_fs8fa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -7, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -8, 6)
 
 [node name="Plattform-Tiles_fbx_BG_Plateau" parent="Turm" instance=ExtResource("21_aw2g7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -162, -8, 6)
