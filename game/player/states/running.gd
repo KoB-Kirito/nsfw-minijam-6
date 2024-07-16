@@ -15,6 +15,7 @@ func _physics_process(delta: float) -> void:
 		change_state(%Jumping)
 		return
 	
+	# vertical movement
 	var input_x := Input.get_axis("left", "right")
 	if input_x > 0:
 		# right

@@ -42,4 +42,5 @@ var last_direction: Vector3 = Vector3.RIGHT
 
 # Debug
 func _on_state_machine_3d_state_changed(object: Node, old_state: State3D, new_state: State3D) -> void:
-	print("Player changed state from ", old_state.name if old_state else "null", " to ", new_state.name)
+	#print("Player changed state from ", old_state.name if old_state else "null", " to ", new_state.name)
+	%Debug.text = new_state.name

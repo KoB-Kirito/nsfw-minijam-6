@@ -10,6 +10,8 @@ func _enter_state() -> void:
 	_owner.velocity.y = _owner.jump_velocity
 	
 	#TODO: play jump animation
+	%AnimationTree.set("parameters/IdleToRun/blend_position", 0.0)
+	
 
 
 func _physics_process(delta: float) -> void:
