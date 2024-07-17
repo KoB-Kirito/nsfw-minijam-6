@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://game/camera/Camera25D.gd" id="1_4fnuy"]
 
 [node name="Camera25D" type="Camera3D"]
+fov = 45.0
 script = ExtResource("1_4fnuy")

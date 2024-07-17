@@ -1,21 +1,41 @@
 extends Camera3D
-
-@export var target: Node3D = null
-@export var smoothSpeed: float = 2
-@export var height: float = 2
-
-var cameraTarget: Node3D
-
-func _ready():
-	# find camera target within target node
-	cameraTarget = target
-	#cameraTarget = target.find_child("CameraTarget")
+## Main game camera for 2.5D games.
+## - Follows the player
+## - Looks ahead
+## - y movement only while landed
 
 
-func _physics_process(delta) -> void:
-	# Smoothly move the camera to the offset away from the target
-	# (and add noise offset)
-	# lerp only in z (use only the z value of the cameraTarget position)
-	self.position = lerp(self.position,
-		Vector3(cameraTarget.global_position.x, cameraTarget.global_position.y + height, self.position.z),
-		smoothSpeed * delta)
+## Target
+@export var player: Player
+@export_range(0.0, 60.0, 1.0) var follow_speed: float = 2.0
+## Distance in meters that the camera will look ahead in moved direction
+@export var look_ahead: float = 3.0
+
+var offset: Vector3
+var last_y: float
+
+
+func _ready() -> void:
+	assert(player, "Player is not set")
+	
+	offset = global_position - player.global_position
+
+
+func _physics_process(delta: float) -> void:
+	var target_position := player.global_position
+	
+	if player.is_on_floor():
+		last_y = player.global_position.y
+		
+	else:
+		# keep y while airborne
+		target_position.y = last_y
+	
+	if player.last_direction == Vector3.LEFT:
+		target_position.x -= look_ahead
+	elif player.last_direction == Vector3.RIGHT:
+		target_position.x += look_ahead
+	
+	target_position += offset
+	
+	global_position = global_position.lerp(target_position, follow_speed * delta)

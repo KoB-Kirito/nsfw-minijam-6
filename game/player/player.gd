@@ -40,6 +40,37 @@ extends CharacterBody3D
 var last_direction: Vector3 = Vector3.RIGHT
 
 
+func handle_default_horizontal_movement(delta: float) -> void:
+	var input_x := Input.get_axis("left", "right")
+	if input_x > 0:
+		# right
+		last_direction = Vector3.RIGHT
+		
+		if velocity.x < 0:
+			# de-accelerating toward 0
+			velocity.x = move_toward(velocity.x, maximum_speed, de_acceleration * friction * delta)
+			
+		else:
+			# accelerating
+			velocity.x = move_toward(velocity.x, maximum_speed, acceleration * friction * delta)
+		
+	elif input_x < 0:
+		# left
+		last_direction = Vector3.LEFT
+		
+		if velocity.x > 0:
+			# de-accelerating toward 0
+			velocity.x = move_toward(velocity.x, -maximum_speed, de_acceleration * friction * delta)
+			
+		else:
+			# accelerating
+			velocity.x = move_toward(velocity.x, -maximum_speed, acceleration * friction * delta)
+		
+	else:
+		# stop
+		velocity.x = move_toward(velocity.x, 0, de_acceleration * friction * delta)
+
+
 # Debug
 func _on_state_machine_3d_state_changed(object: Node, old_state: State3D, new_state: State3D) -> void:
 	#print("Player changed state from ", old_state.name if old_state else "null", " to ", new_state.name)

@@ -15,36 +15,8 @@ func _physics_process(delta: float) -> void:
 		change_state(%Jumping)
 		return
 	
-	# vertical movement
-	var input_x := Input.get_axis("left", "right")
-	if input_x > 0:
-		# right
-		_owner.last_direction = Vector3.RIGHT
-		
-		if _owner.velocity.x < 0:
-			# de-accelerating toward 0
-			_owner.velocity.x = move_toward(_owner.velocity.x, _owner.maximum_speed, _owner.de_acceleration * _owner.friction * delta)
-			
-		else:
-			# accelerating
-			_owner.velocity.x = move_toward(_owner.velocity.x, _owner.maximum_speed, _owner.acceleration * _owner.friction * delta)
-		
-	elif input_x < 0:
-		# left
-		_owner.last_direction = Vector3.LEFT
-		
-		if _owner.velocity.x > 0:
-			# de-accelerating toward 0
-			_owner.velocity.x = move_toward(_owner.velocity.x, -_owner.maximum_speed, _owner.de_acceleration * _owner.friction * delta)
-			
-		else:
-			# accelerating
-			_owner.velocity.x = move_toward(_owner.velocity.x, -_owner.maximum_speed, _owner.acceleration * _owner.friction * delta)
-		
-	else:
-		# stop
-		_owner.velocity.x = move_toward(_owner.velocity.x, 0, _owner.de_acceleration * _owner.friction * delta)
-	
+	# horizontal movement
+	_owner.handle_default_horizontal_movement(delta)
 	_owner.move_and_slide()
 	
 	# rotate model
