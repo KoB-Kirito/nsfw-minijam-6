@@ -54,7 +54,7 @@ fog_depth_end = 200.0
 size = Vector2(100, 200)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xbfum"]
-size = Vector3(20, 10, 3)
+size = Vector3(18.2558, 10, 3)
 
 [node name="Testlevel" type="Node3D"]
 script = ExtResource("1_5yc4w")
@@ -64,9 +64,10 @@ metadata/_edit_lock_ = true
 script = null
 
 [node name="Camera25D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_txtxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0733, -2.10394, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0733, -1.86901, 10)
 current = true
 player = NodePath("../Player")
+look_ahead = 2.0
 
 [node name="Player" parent="." instance=ExtResource("4_54c4c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0733, -3.95224, 0)
@@ -362,7 +363,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.7696, -1.05471, 17.2668)
 top_level = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/StaticCameraZone/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17976, -17.4933)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.18, -17.493)
 shape = SubResource("BoxShape3D_xbfum")
 
 [node name="Enemies" type="Node" parent="."]
