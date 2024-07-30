@@ -34,6 +34,8 @@ func _physics_process(delta) -> void:
 	if not is_zero_approx(_owner.velocity.x) or not is_zero_approx(input_x):
 		change_state(%Running)
 		return
+	
+	_owner.move_and_slide()
 
 
 func _on_idle_animation_timer_timeout() -> void:

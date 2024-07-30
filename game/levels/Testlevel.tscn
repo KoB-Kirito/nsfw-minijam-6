@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://d3jde07kb2vc8" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_BG_Ebene.fbx" id="17_fs8fa"]
 [ext_resource type="PackedScene" uid="uid://su1kkj210gan" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_BG_Schlucht.fbx" id="17_t5ncq"]
 [ext_resource type="Material" uid="uid://cbagjoyt7oqt8" path="res://assets/materials/Mat_Boden-Tempel.tres" id="17_vr4qb"]
-[ext_resource type="PackedScene" uid="uid://div3l7ce32x3c" path="res://assets/models/Schleim/Schleim_Model.tscn" id="18_xrn82"]
 [ext_resource type="PackedScene" uid="uid://bgigokxn8uri4" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_BG_Lagune.fbx" id="19_dslgs"]
 [ext_resource type="PackedScene" uid="uid://cj4q2jr1wll8a" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_BG_Plateau.fbx" id="21_aw2g7"]
 [ext_resource type="PackedScene" uid="uid://d1tcn3uf2ixf1" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Wand_Wasserfall.fbx" id="24_4fvgw"]
@@ -32,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://p8055gwj2lfm" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Block_Wasserfall.fbx" id="28_qp4fa"]
 [ext_resource type="PackedScene" uid="uid://t1rhn4mlxg63" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Back_Flusslauf.fbx" id="30_aejpa"]
 [ext_resource type="PackedScene" uid="uid://cn1kq42l37eu6" path="res://game/camera/static_camera_zone.tscn" id="32_4m5cy"]
+[ext_resource type="PackedScene" uid="uid://ct5cc4ttkcgtx" path="res://game/enemies/slime/slime.tscn" id="32_ol6hf"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_toaqd"]
 
@@ -64,13 +64,13 @@ metadata/_edit_lock_ = true
 script = null
 
 [node name="Camera25D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_txtxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0733, -1.86901, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, -1.869, 10)
 current = true
 player = NodePath("../Player")
 look_ahead = 2.0
 
 [node name="Player" parent="." instance=ExtResource("4_54c4c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0733, -3.95224, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, -3.952, 0)
 camera_look_ahead_distance = 2.0
 
 [node name="Turm" type="Node3D" parent="." node_paths=PackedStringArray("player")]
@@ -126,6 +126,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, -5, 0)
 [node name="Plattform-Tiles_fbx_Block_Boden-2m4" parent="Level/Platforms" instance=ExtResource("9_wooyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, -5, 0)
 
+[node name="Plattform-Tiles_fbx_Block_Boden-2m5" parent="Level/Platforms" instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m11" parent="Level/Platforms" instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m16" parent="Level/Platforms" instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m17" parent="Level/Platforms" instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m18" parent="Level/Platforms" instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m19" parent="Level/Platforms" instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m20" parent="Level/Platforms" instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m21" parent="Level/Platforms" instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m22" parent="Level/Platforms" instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m23" parent="Level/Platforms" instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m24" parent="Level/Platforms" instance=ExtResource("9_wooyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, -5, 0)
+
 [node name="Plattform-Tiles_fbx_Baumbr_cke2" parent="Level/Platforms" instance=ExtResource("16_cpggd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, -3.21159, 0)
 
@@ -151,7 +184,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -3, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, -4, 0)
 
 [node name="Plattform-Tiles_fbx_Block_Kante_R5" parent="Level/Platforms" instance=ExtResource("11_4ak77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, -5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, -5, 0)
 
 [node name="Plattform-Tiles_fbx_Block_Kante_L2" parent="Level/Platforms" instance=ExtResource("10_ja2yk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, 0)
@@ -368,8 +401,12 @@ shape = SubResource("BoxShape3D_xbfum")
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Schleim" parent="Enemies" instance=ExtResource("18_xrn82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.6519, -4, 0)
-
 [node name="wolfy" parent="Enemies" instance=ExtResource("8_616kr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4191, 1, 0)
+
+[node name="Slime" parent="Enemies" instance=ExtResource("32_ol6hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.894, -3.67308, 0)
+
+[node name="Slime2" parent="Enemies" instance=ExtResource("32_ol6hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.2465, -3.67308, 0)
+starting_walking_direction = 1

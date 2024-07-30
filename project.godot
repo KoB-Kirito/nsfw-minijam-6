@@ -161,8 +161,11 @@ dialogic_default_action={
 
 [layer_names]
 
+3d_physics/layer_1="World"
 3d_physics/layer_2="Ground"
+3d_physics/layer_3="Enemies"
 3d_physics/layer_4="Player"
+3d_physics/layer_5="Hitboxes"
 
 [rendering]
 
