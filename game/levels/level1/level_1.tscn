@@ -1,0 +1,412 @@
+[gd_scene load_steps=38 format=3 uid="uid://qphka0nbmibh"]
+
+[ext_resource type="PackedScene" uid="uid://djan5tyrabooq" path="res://game/levels/level1/cutscene_intro.tscn" id="1_loeqy"]
+[ext_resource type="Material" uid="uid://cnnabn6ihvon4" path="res://assets/materials/Mat_Sky.tres" id="2_rjaww"]
+[ext_resource type="PackedScene" uid="uid://iwn65impjfhn" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Back_Rand-4m.fbx" id="3_hip15"]
+[ext_resource type="PackedScene" uid="uid://p8055gwj2lfm" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Block_Wasserfall.fbx" id="4_mmdu4"]
+[ext_resource type="PackedScene" uid="uid://b86jjyg32tstf" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Block_Boden-2m.fbx" id="5_w8ad3"]
+[ext_resource type="PackedScene" uid="uid://nenykugb2wvv" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Baumbr_cke.fbx" id="6_3eqqf"]
+[ext_resource type="PackedScene" uid="uid://dlk5xpsao35r8" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Block_Kante_L.fbx" id="7_ocegk"]
+[ext_resource type="PackedScene" uid="uid://b40x2ab71wetu" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Block_Kante_R.fbx" id="8_2no7p"]
+[ext_resource type="PackedScene" uid="uid://cjakj4jqriooa" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Treppe-Stein.fbx" id="9_gtkgn"]
+[ext_resource type="PackedScene" uid="uid://c5c138j6bfc32" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Wand_L-2m.fbx" id="10_vhduc"]
+[ext_resource type="PackedScene" uid="uid://vg0cnbwu3vrc" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Strauch.fbx" id="11_honi3"]
+[ext_resource type="PackedScene" uid="uid://bqspf0u07pryb" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Gr_nzeug-2m.fbx" id="12_e5d2y"]
+[ext_resource type="PackedScene" uid="uid://mb1fw2iktp8i" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_St_tzs_ule-4x2m.fbx" id="13_sq0qc"]
+[ext_resource type="PackedScene" uid="uid://drc58rd26f3oh" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Felss_ule-2x4m.fbx" id="14_s2g2k"]
+[ext_resource type="PackedScene" uid="uid://d1tcn3uf2ixf1" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Wand_Wasserfall.fbx" id="15_isivh"]
+[ext_resource type="PackedScene" uid="uid://csnu2ssudamd8" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Felswand-4x4m.fbx" id="16_6p15a"]
+[ext_resource type="PackedScene" uid="uid://80r8p7h45mid" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Felswand_2-4x4m.fbx" id="17_kt80l"]
+[ext_resource type="PackedScene" uid="uid://dr1dykfqrd8al" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Felsen1.fbx" id="18_qb4ui"]
+[ext_resource type="PackedScene" uid="uid://t1rhn4mlxg63" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Back_Flusslauf.fbx" id="19_llgly"]
+[ext_resource type="PackedScene" uid="uid://bgigokxn8uri4" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_BG_Lagune.fbx" id="20_ef2sb"]
+[ext_resource type="PackedScene" uid="uid://cj4q2jr1wll8a" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_BG_Plateau.fbx" id="21_vf1en"]
+[ext_resource type="PackedScene" uid="uid://d3jde07kb2vc8" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_BG_Ebene.fbx" id="22_twxe4"]
+[ext_resource type="Material" uid="uid://cbagjoyt7oqt8" path="res://assets/materials/Mat_Boden-Tempel.tres" id="23_fae75"]
+[ext_resource type="PackedScene" uid="uid://su1kkj210gan" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_BG_Schlucht.fbx" id="24_8gs7f"]
+[ext_resource type="PackedScene" uid="uid://cn1kq42l37eu6" path="res://game/camera/static_camera_zone.tscn" id="25_fknkf"]
+[ext_resource type="Script" path="res://game/levels/turm.gd" id="26_747xo"]
+[ext_resource type="PackedScene" uid="uid://dpurm8uuq3r2p" path="res://assets/models/grid/Tempel/Plattform-Tiles.fbx_Anker_Bergweg-6m.fbx" id="27_81e3e"]
+[ext_resource type="PackedScene" uid="uid://b6hajwuq3b2rj" path="res://game/entities/starting_position.tscn" id="28_60pdc"]
+[ext_resource type="PackedScene" uid="uid://blsm7sha38xcx" path="res://game/wolfy/wolfy_model.tscn" id="28_k3jb2"]
+[ext_resource type="PackedScene" uid="uid://2wtjq7tb282t" path="res://game/entities/level_change.tscn" id="29_0qasn"]
+[ext_resource type="PackedScene" uid="uid://ct5cc4ttkcgtx" path="res://game/enemies/slime/slime.tscn" id="29_5t4wt"]
+
+[sub_resource type="Sky" id="Sky_l60r6"]
+sky_material = ExtResource("2_rjaww")
+
+[sub_resource type="Environment" id="Environment_a0wee"]
+background_mode = 2
+sky = SubResource("Sky_l60r6")
+ambient_light_source = 3
+ambient_light_color = Color(0.331538, 0.437518, 0.472877, 1)
+ambient_light_sky_contribution = 0.0
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.36, 0.46, 0.6, 1)
+fog_density = 1.0
+fog_depth_end = 200.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cjxt6"]
+size = Vector2(100, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xbfum"]
+size = Vector3(18.2558, 10, 3)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_toaqd"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_62r73"]
+radius = 1.0
+
+[node name="Level1" type="Node"]
+
+[node name="CutsceneIntro" parent="." instance=ExtResource("1_loeqy")]
+script = null
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a0wee")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.994286, 0.0791909, -0.0715847, 0, 0.670582, 0.741835, 0.10675, -0.737596, 0.66675, 0, 4.83629, 3.0274)
+light_energy = 0.5
+shadow_enabled = true
+shadow_blur = 0.0
+directional_shadow_mode = 1
+directional_shadow_split_1 = 0.15
+directional_shadow_split_2 = 0.1
+directional_shadow_max_distance = 70.0
+
+[node name="World" type="Node" parent="."]
+
+[node name="Platforms" type="Node3D" parent="World"]
+
+[node name="Plattform-Tiles_fbx_Back_Rand-4m" parent="World/Platforms" instance=ExtResource("3_hip15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 0)
+
+[node name="Plattform-Tiles_fbx_Back_Rand-4m2" parent="World/Platforms" instance=ExtResource("3_hip15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -4, 0)
+
+[node name="Plattform-Tiles_fbx_Back_Rand-4m3" parent="World/Platforms" instance=ExtResource("3_hip15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Wasserfall2" parent="World/Platforms" instance=ExtResource("4_mmdu4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m3" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m4" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m5" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m11" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m16" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m17" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m18" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m19" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m20" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m21" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m22" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m23" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m24" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Baumbr_cke2" parent="World/Platforms" instance=ExtResource("6_3eqqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, -3.21159, 0)
+
+[node name="Plattform-Tiles_fbx_Baumbr_cke" parent="World/Platforms" instance=ExtResource("6_3eqqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -0.211585, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Kante_L" parent="World/Platforms" instance=ExtResource("7_ocegk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Kante_L4" parent="World/Platforms" instance=ExtResource("7_ocegk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Kante_R" parent="World/Platforms" instance=ExtResource("8_2no7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Kante_R2" parent="World/Platforms" instance=ExtResource("8_2no7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Kante_R3" parent="World/Platforms" instance=ExtResource("8_2no7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -3, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Kante_R4" parent="World/Platforms" instance=ExtResource("8_2no7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, -4, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Kante_R5" parent="World/Platforms" instance=ExtResource("8_2no7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Kante_L2" parent="World/Platforms" instance=ExtResource("7_ocegk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Kante_L3" parent="World/Platforms" instance=ExtResource("7_ocegk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m6" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m10" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -3, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -3, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m12" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -3, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m13" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -4, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m14" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -4, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m15" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -4, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m7" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m8" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m9" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 0)
+
+[node name="Plattform-Tiles_fbx_Treppe-Stein2" parent="World/Platforms" instance=ExtResource("9_gtkgn")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19, -3, 0)
+
+[node name="Plattform-Tiles_fbx_Wand_L-2m" parent="World/Platforms" instance=ExtResource("10_vhduc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5598, -1, 0)
+
+[node name="Plattform-Tiles_fbx_Wand_L-2m2" parent="World/Platforms" instance=ExtResource("10_vhduc")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.2011, -1, 0)
+
+[node name="Plattform-Tiles_fbx_Wand_L-2m3" parent="World/Platforms" instance=ExtResource("10_vhduc")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10.2011, -1, 0)
+
+[node name="Plattform-Tiles_fbx_Block_Boden-2m2" parent="World/Platforms" instance=ExtResource("5_w8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 0)
+
+[node name="Plattform-Tiles_fbx_Treppe-Stein" parent="World/Platforms" instance=ExtResource("9_gtkgn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Doodads" type="Node3D" parent="World"]
+
+[node name="Plattform-Tiles_fbx_Strauch2" parent="World/Doodads" instance=ExtResource("11_honi3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.4, -2, -3.8)
+
+[node name="Plattform-Tiles_fbx_Gr_nzeug-2m" parent="World/Doodads" instance=ExtResource("12_e5d2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Gr_nzeug-2m2" parent="World/Doodads" instance=ExtResource("12_e5d2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, -5, 0)
+
+[node name="Plattform-Tiles_fbx_Strauch3" parent="World/Doodads" instance=ExtResource("11_honi3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.693, -1.92293, 1.2)
+
+[node name="Plattform-Tiles_fbx_Strauch" parent="World/Doodads" instance=ExtResource("11_honi3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6169, -3.00417, -1.54584)
+
+[node name="Plattform-Tiles_fbx_St_tzs_ule-4x2m" parent="World/Doodads" instance=ExtResource("13_sq0qc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -6, 0)
+
+[node name="Plattform-Tiles_fbx_Felss_ule-2x4m" parent="World/Doodads" instance=ExtResource("14_s2g2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -3, -2)
+
+[node name="Plattform-Tiles_fbx_Felss_ule-2x4m2" parent="World/Doodads" instance=ExtResource("14_s2g2k")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -42, -9, 2)
+
+[node name="Plattform-Tiles_fbx_Felss_ule-2x4m3" parent="World/Doodads" instance=ExtResource("14_s2g2k")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -46, -9, 2)
+
+[node name="Plattform-Tiles_fbx_Wand_Wasserfall" parent="World/Doodads" instance=ExtResource("15_isivh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, -8.99, 1)
+
+[node name="Plattform-Tiles_fbx_Back_Rand-4m" parent="World/Doodads" instance=ExtResource("3_hip15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -3, 0)
+
+[node name="Plattform-Tiles_fbx_Baumbr_cke3" parent="World/Doodads" instance=ExtResource("6_3eqqf")]
+transform = Transform3D(0.253408, -0.497678, 0.829518, 0.255305, -0.792697, -0.55358, 0.933062, 0.352061, -0.0738158, -0.355301, 6.75448, -3.05217)
+
+[node name="Plattform-Tiles_fbx_Gr_nzeug-2m3" parent="World/Doodads" instance=ExtResource("12_e5d2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2962, -1, 0.2017)
+
+[node name="Plattform-Tiles_fbx_Gr_nzeug-2m6" parent="World/Doodads" instance=ExtResource("12_e5d2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, -4, 0.2979)
+
+[node name="Plattform-Tiles_fbx_Gr_nzeug-2m4" parent="World/Doodads" instance=ExtResource("12_e5d2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0.2979)
+
+[node name="Plattform-Tiles_fbx_Gr_nzeug-2m5" parent="World/Doodads" instance=ExtResource("12_e5d2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -3, 0.2979)
+
+[node name="Plattform-Tiles_fbx_Gr_nzeug-2m7" parent="World/Doodads" instance=ExtResource("12_e5d2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -3, 0.2979)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m" parent="World/Doodads" instance=ExtResource("16_6p15a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Plattform-Tiles_fbx_Felswand_2-4x4m" parent="World/Doodads" instance=ExtResource("17_kt80l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -3.323)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m5" parent="World/Doodads" instance=ExtResource("16_6p15a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -2.908)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m8" parent="World/Doodads" instance=ExtResource("16_6p15a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -3, -2.708)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m3" parent="World/Doodads" instance=ExtResource("16_6p15a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -3)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m4" parent="World/Doodads" instance=ExtResource("16_6p15a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -3, -2.43045)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m6" parent="World/Doodads" instance=ExtResource("16_6p15a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -4, 1)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m9" parent="World/Doodads" instance=ExtResource("16_6p15a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -7, 1)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m10" parent="World/Doodads" instance=ExtResource("16_6p15a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, -9, 0)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m7" parent="World/Doodads" instance=ExtResource("16_6p15a")]
+transform = Transform3D(1.07, 0, 0, 0, 1.07, 0, 0, 0, 1.07, 0, -4, 1)
+
+[node name="Plattform-Tiles_fbx_Felsen2" parent="World/Doodads" instance=ExtResource("18_qb4ui")]
+transform = Transform3D(0.990655, 0, 0.13639, 0, 1, 0, -0.13639, 0, 0.990655, 3.5381, 0.00100005, 1.2034)
+
+[node name="Plattform-Tiles_fbx_Felsen4" parent="World/Doodads" instance=ExtResource("18_qb4ui")]
+transform = Transform3D(0.990655, 0, 0.13639, 0, 1, 0, -0.13639, 0, 0.990655, -18.5429, -2.999, 1.2034)
+
+[node name="Plattform-Tiles_fbx_Gr_nzeug-2m8" parent="World/Doodads" instance=ExtResource("12_e5d2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0.0784998)
+
+[node name="Plattform-Tiles_fbx_Felsen3" parent="World/Doodads" instance=ExtResource("18_qb4ui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9827, 0.70479, -1.3748)
+
+[node name="Plattform-Tiles_fbx_Felsen1" parent="World/Doodads" instance=ExtResource("18_qb4ui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2549, 0, 1.0952)
+
+[node name="Plattform-Tiles_fbx_Felswand_2-4x4m2" parent="World/Doodads" instance=ExtResource("17_kt80l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -6, 1)
+
+[node name="Plattform-Tiles_fbx_Felswand_2-4x4m3" parent="World/Doodads" instance=ExtResource("17_kt80l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -7, 1)
+
+[node name="Plattform-Tiles_fbx_Felswand_2-4x4m4" parent="World/Doodads" instance=ExtResource("17_kt80l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, -9, 0)
+
+[node name="Plattform-Tiles_fbx_Felswand_2-4x4m6" parent="World/Doodads" instance=ExtResource("17_kt80l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, -9, 0)
+
+[node name="Plattform-Tiles_fbx_Felswand_2-4x4m5" parent="World/Doodads" instance=ExtResource("17_kt80l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, -5, -4)
+
+[node name="Plattform-Tiles_fbx_Felswand_2-4x4m7" parent="World/Doodads" instance=ExtResource("17_kt80l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, -6, -4)
+
+[node name="Plattform-Tiles_fbx_Felswand-4x4m2" parent="World/Doodads" instance=ExtResource("16_6p15a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, -5, -4)
+
+[node name="Background" type="Node3D" parent="World"]
+
+[node name="Plattform-Tiles_fbx_Back_Flusslauf" parent="World/Background" instance=ExtResource("19_llgly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, -5, -1)
+
+[node name="Plattform-Tiles_fbx_BG_Lagune2" parent="World/Background" instance=ExtResource("20_ef2sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, -9, -6)
+
+[node name="Plattform-Tiles_fbx_BG_Plateau" parent="World/Background" instance=ExtResource("21_vf1en")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142, -9, -6)
+
+[node name="Plattform-Tiles_fbx_BG_Ebene" parent="World/Background" instance=ExtResource("22_twxe4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -9, -6)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="World/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.434, -10.9928, -106.159)
+material_override = ExtResource("23_fae75")
+mesh = SubResource("PlaneMesh_cjxt6")
+skeleton = NodePath("../../Turm")
+
+[node name="Plattform-Tiles_fbx_BG_Schlucht2" parent="World/Background" instance=ExtResource("24_8gs7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -9, -6)
+
+[node name="Foreground" type="Node3D" parent="World"]
+
+[node name="Plattform-Tiles_fbx_BG_Plateau2" parent="World/Foreground" instance=ExtResource("21_vf1en")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -53, 102)
+
+[node name="StaticCameraZone" parent="World" instance=ExtResource("25_fknkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.7696, -1.05471, 17.2668)
+
+[node name="Area3D" type="Area3D" parent="World/StaticCameraZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.7696, -1.05471, 17.2668)
+top_level = true
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/StaticCameraZone/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.18, -17.493)
+shape = SubResource("BoxShape3D_xbfum")
+
+[node name="Turm" type="Node3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, -12)
+script = ExtResource("26_747xo")
+startX = 20.0
+maxAngle = 90.0
+radius = 12.0
+
+[node name="Plattform-Tiles_fbx_Anker_Bergweg-6m" parent="World/Turm" instance=ExtResource("27_81e3e")]
+physics_interpolation_mode = 1
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Turm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Turm/StaticBody3D"]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, -17, 0)
+shape = SubResource("CylinderShape3D_toaqd")
+
+[node name="StartingPosition" parent="World" instance=ExtResource("28_60pdc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.3984, -3.98689, 0)
+
+[node name="LevelChange" parent="World" instance=ExtResource("29_0qasn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8599, 2.76893, 0)
+level_path = "res://game/levels/level2/level_2.tscn"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/LevelChange"]
+shape = SubResource("SphereShape3D_62r73")
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="wolfy" parent="Enemies" instance=ExtResource("28_k3jb2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4191, 1, 0)
+
+[node name="Slime" parent="Enemies" instance=ExtResource("29_5t4wt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.894, -3.67308, 0)
+
+[node name="Slime2" parent="Enemies" instance=ExtResource("29_5t4wt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.2465, -3.67308, 0)
+starting_walking_direction = 1

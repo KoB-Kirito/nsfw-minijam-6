@@ -5,7 +5,6 @@ extends Camera3D
 ## the collision shapes added under this node.
 
 
-@export var player_camera: Camera3D
 @export var transition_duration: float = 2.0
 @export var transition: Tween.TransitionType = Tween.TRANS_CUBIC
 
@@ -15,8 +14,6 @@ var original_transform: Transform3D
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
-	
-	assert(player_camera, "Player Camera is not set")
 	
 	original_transform = global_transform
 	
@@ -55,7 +52,11 @@ func on_trigger_area_body_exited(body: Node3D) -> void:
 	#print_debug("Player left")
 	
 	# let the player camera lerp do the rest
-	player_camera.global_transform = global_transform
+	var player_camera = get_tree().get_first_node_in_group("player_camera")
+	if player_camera:
+		player_camera.global_transform = global_transform
+	else:
+		push_error("player_camera not found")
 	
 	self.clear_current()
 
@@ -79,6 +80,8 @@ func _get_configuration_warnings() -> PackedStringArray:
 	if not has_area:
 		warnings.append("Add a Area3D to define the area that triggers this camera.\n" +
 						"The camera is active while the player is inside that area.")
+	
+	#TODO: Check if area has right collision mask
 	
 	return warnings
 

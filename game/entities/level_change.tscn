@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://2wtjq7tb282t"]
+
+[ext_resource type="Script" path="res://game/entities/level_change.gd" id="1_qw5hl"]
+
+[node name="LevelChange" type="Area3D" groups=["level_change"]]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_qw5hl")

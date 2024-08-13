@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1it5tbiaxv8a"]
+
+[ext_resource type="Script" path="res://game/game.gd" id="1_3v0u1"]
+[ext_resource type="PackedScene" uid="uid://duqcippdw1h7s" path="res://game/camera/Camera25D.tscn" id="2_txtxq"]
+[ext_resource type="PackedScene" uid="uid://d2vq5gne71oyg" path="res://game/player/player.tscn" id="4_54c4c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6rrj"]
+
+[node name="Game" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_3v0u1")
+first_level_path = "res://game/levels/level1/level_1.tscn"
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("4_54c4c")]
+unique_name_in_owner = true
+process_mode = 1
+camera_look_ahead_distance = 2.0
+
+[node name="Camera25D" parent="." node_paths=PackedStringArray("player") groups=["player_camera"] instance=ExtResource("2_txtxq")]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10)
+current = true
+player = NodePath("../Player")
+look_ahead = 2.0
+
+[node name="LoadingOverlay" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Fade" type="ColorRect" parent="LoadingOverlay"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LoadingProgressBar" type="ProgressBar" parent="LoadingOverlay/Fade"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_d6rrj")
+value = 66.0
+show_percentage = false
